@@ -1,0 +1,13 @@
+.contenedor {
+    display: flex;
+}
+.cabecera{
+    display: flex;
+}
+.contenedor_proyecto{
+    display: flex;
+   
+}
+.contenedor_habilidades{
+    display: flex;
+}
