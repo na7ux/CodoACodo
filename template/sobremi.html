@@ -5,59 +5,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../static/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="https://kit.fontawesome.com/ad9835fec7.js" crossorigin="anonymous"></script>
     <title>WebfolioCreations</title>
 </head>
 
 <body>
-    <header>
-        <div>
-            <img src="../static/img/logo-only.png" alt="logo">
-        </div>
-        <div><h1>Webfolio Creations</h1></div>
-        <div>
-            <a href="">Iniciar Sesion</a>
-        </div>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="">Inicio</a></li>
-            <li><a href="">Sombre Mi</a></li>
-            <li><a href="">Experiencia de Trabajo</a></li>
-            <li><a href="">Proyectos</a></li>
-            <li><a href="">Habilidades</a></li>
-            <li><a href="">Contacto</a></li>
-        </ul>
-    </nav>
-    <section>
-        <div>
-            <h2>Sobre Mi</h2>
-            <img src="" alt="foto_perfil">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione iure tempora est sint? Fugiat, vero
-                dolorem voluptatum ducimus iusto sint. Eaque natus rerum consequuntur earum accusantium iure quod id
-                cum, delectus doloremque, voluptatum doloribus illum? Atque velit id recusandae reprehenderit
-                repudiandae aut quas dolorum, veniam illum cum repellat assumenda repellendus beatae, ipsam eius ducimus
-                consequuntur numquam! Optio sequi culpa consectetur illo, perferendis, fugit nisi ratione assumenda aut
-                in, repellendus voluptatem quae vero officia nihil saepe maiores recusandae id at! Placeat quasi officia
-                dolore omnis! Explicabo at obcaecati earum, est assumenda eaque incidunt nulla maxime, impedit odit qui
-                expedita cupiditate rem. Ipsum similique praesentium et reprehenderit animi consectetur mollitia
-                incidunt officia nihil ea maxime libero repellendus eius voluptatem natus quos, autem, deleniti
-                delectus, commodi harum labore alias! Quam dicta saepe aliquid voluptates, quod a deleniti! Veniam
-                dignissimos perferendis repellendus doloremque alias aliquid nihil ducimus labore. Cupiditate nam
-                debitis soluta inventore fugit fugiat consequuntur odio tempore, asperiores deleniti aspernatur. Odit,
-                aliquid eveniet facilis, sed tempore commodi nobis laudantium ea modi deserunt, nostrum id! Earum libero
-                consequuntur deleniti, ratione quam praesentium cupiditate ex nesciunt tempore molestiae alias officia
-                tempora vero aperiam, quidem doloremque magnam animi dolore! Quidem asperiores voluptatum totam
-                reprehenderit nihil. Magni!</p>
-        </div>
-    </section>
-    <footer>
-        <div>
-            <h6>Todos los derechos reservados | Diseñado por El trio maravilla - 2024</h6>
-        </div>
-        <div>
-            <a href="">Soporte</a>
-        </div>
-    </footer>
+    <div class="container">
+        <header>
+            <div id="logo">
+                <a href="../index.html">
+                    <img src="../static/img/logo-only-noBackground.png" alt="logo" id="logo-img">
+                </a>
+                <h1>Webfolio Creations</h1>
+            </div>
+            <div id="login">
+                <a href="./login.html">Iniciar Sesion</a>
+            </div>
+        </header>
+        <div class="navbar">        
+            <input type="checkbox" name="" id="check">
+            <label class="hamb" for="check"><span class="hamb-line"></span></label>
+            <nav class="nav">
+                <ul class="menu nobullets">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="./sobremi.html">Sobre Mi</a></li>
+                    <li><a href="./experencia_laboral.html">Experiencia de Trabajo</a></li>
+                    <li><a href="./proyectos.html">Proyectos</a></li>
+                    <li><a href="./habilidades.html">Habilidades</a></li>
+                    <li><a href="./contacto.html">Contacto</a></li>
+                </ul>
+            </nav>       
+        </div>         
+        <main>
+            <div id="about-me">
+                <div>
+                    <h2>Sobre Mi</h2>
+                </div>
+                <div class="profile-img">
+                    <img src="../static/img/profile-pic.png" alt="foto_perfil">
+                </div>
+                <div class="text text-centered">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione iure tempora est sint? Fugiat, vero
+                        dolorem voluptatum ducimus iusto sint. Eaque natus rerum consequuntur earum accusantium iure quod id
+                        cum, delectus doloremque, voluptatum doloribus illum? Atque velit id recusandae reprehenderit
+                        repudiandae aut quas dolorum, veniam illum cum repellat assumenda repellendus beatae, ipsam eius
+                        ducimus
+                        consequuntur numquam! Optio sequi culpa consectetur illo, perferendis, fugit nisi ratione assumenda
+                        aut
+                        in, repellendus voluptatem quae vero officia nihil saepe maiores recusandae id at! Placeat quasi
+                        officia
+                        dolore omnis! Explicabo at obcaecati earum, est assumenda eaque incidunt nulla maxime, impedit odit
+                        qui
+                        expedita cupiditate rem. Ipsum similique praesentium et reprehenderit animi consectetur mollitia
+                        incidunt officia nihil ea maxime libero repellendus eius voluptatem natus quos, autem, deleniti
+                        delectus, commodi harum labore alias! Quam dicta saepe aliquid voluptates, quod a deleniti! Veniam
+                        dignissimos perferendis repellendus doloremque alias aliquid nihil ducimus labore. Cupiditate nam
+                        debitis soluta inventore fugit fugiat consequuntur odio tempore, asperiores deleniti aspernatur.
+                        Odit,
+                        aliquid eveniet facilis, sed tempore commodi nobis laudantium ea modi deserunt, nostrum id! Earum
+                        libero
+                        consequuntur deleniti, ratione quam praesentium cupiditate ex nesciunt tempore molestiae alias
+                        officia
+                        tempora vero aperiam, quidem doloremque magnam animi dolore! Quidem asperiores voluptatum totam
+                        reprehenderit nihil. Magni!</p>
+                </div>                
+            </div>
+        </main>
+        <footer class="text-centered">
+            <div class="rights">
+                <h6>Todos los derechos reservados | Diseñado por El trio maravilla - 2024</h6>
+            </div>
+            <div class="footer-link">
+                <a href="./soporte.html">Soporte</a>
+            </div>
+        </footer>
+    </div>
 </body>
 
 </html>

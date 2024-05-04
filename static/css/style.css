@@ -1,0 +1,364 @@
+:root{
+    --black: #2e2e2d;
+    --white: #ECECED;
+    --grey: #929292;
+    --lightBrown: #D1C1AF;
+    --darkBrown: #716152;
+}
+
+/*ESTILOS GENERALES*/
+a{
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 12px;
+}
+
+h2{
+    margin: 10px;
+    padding: 20px;
+    font-size: 9vw;
+    color: var(--black);
+    text-transform: uppercase;
+    text-shadow: 4px 2px 2px var(--grey);
+}
+
+.text-centered{
+    text-align: center;
+}
+
+.text{
+    padding:2vw;
+    font-size: 2vw;
+}
+.nobullets { /*Sacar bullets de las listas*/
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* || GRID*/
+.container{
+    display: grid;
+    height: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "header header header"
+    "nav nav nav"
+    "main main main"
+    "footer footer footer";
+    align-items: center;
+}
+
+.container_login{
+    display: grid;
+    height: 100%;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "header"
+    "main"
+    "footer";
+    align-items: center;
+}
+
+.container_index{
+    display: grid;
+    height: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 0.75fr 1.5fr 1fr 0.5fr;
+    grid-template-areas: 
+    "header"
+    "banner"
+    "main"
+    "sidebar"
+    "footer";
+    column-gap:  2px;
+    row-gap: 2px;
+    align-items: center;
+}
+
+/* || HEADER*/
+header{
+    display: flex;
+    background-color:var(--black);
+    grid-area: header;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#logo{ 
+    display: flex;
+    align-items: center;    
+}
+
+#login{ 
+    display: flex;
+    align-items: center;  
+}
+#logo a{
+    display: inline-flex;
+    padding: 0;
+    margin: 0;
+    max-width: 100px;
+    align-items: center;
+    justify-content: center;
+}
+#logo a img{ /*imagen logo*/
+    margin: 0;
+    padding: 0;
+    width: 45%;
+}
+header h1{ /*nombre de la empresa*/
+    display: inline;
+    margin: 0;
+    padding: 0;
+    color: var(--white);
+    font-size: 3vw;
+}
+
+#login a{ /*link iniciar sesion*/
+    color: var(--white);
+    font-size: 1.75vw;  
+}
+
+#login a:hover{
+    background: var(--white);
+    color:var(--black);
+    border-radius: 3px;
+    transition: .5s;
+    font-size: 1.75vw;
+    text-decoration: none;
+}
+
+/*BARRA DE NAVEGACION*/
+/* Reset */
+
+.navbar{ /*Contenedor de la barra de navegacion*/
+    background-color: var(--lightBrown);
+    grid-area: nav;
+    top: 0;
+    position: relative;
+}
+.nav{ /*Barra de navegacion*/
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: var(--lightBrown);
+    overflow: hidden;
+    top: 130px;
+    max-height: 0;
+    transition: max-height .5s ease-out;
+}
+
+.menu a{
+    display: block;
+    color: var(--black);
+}
+
+li a:hover{ 
+    background: var(--darkBrown);
+    color: var(--white);
+    transition: .5s;
+}
+
+/* Menu Icon */
+.hamb{
+    cursor: pointer;
+    float: right;
+    padding: 40px 20px;
+}/* Style label tag */
+
+.hamb-line {
+    background: var(--white);
+    display: block;
+    height: 2px;
+    position: relative;
+    width: 24px;
+
+} /* Style span tag */
+
+.hamb-line::before,
+.hamb-line::after{
+    background: var(--white);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+.hamb-line::before{
+    top: 5px;
+}
+.hamb-line::after{
+    top: -5px;
+}
+
+#check{
+    display: none;
+}
+
+#check:checked ~ nav{
+    max-height: 100%;
+}
+#check:checked ~ .hamb .hamb-line {
+    background: transparent;
+}
+#check:checked ~ .hamb .hamb-line::before {
+    transform: rotate(-45deg);
+    top:0;
+}
+#check:checked ~ .hamb .hamb-line::after {
+    transform: rotate(45deg);
+    top:0;
+}
+
+
+/*MAIN*/
+main{
+    background-color: var(--white);
+    grid-area: main;
+    padding: 20px;
+}
+
+#about-me{ /*Contenedor seccion Sobre Mi - sobremi.html*/
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-img{
+    display: flex;
+    justify-content: center;
+}
+
+.profile-img img {
+    padding: 5px;
+    width: 40%;
+}
+
+/*FOOTER*/
+footer{
+    background-color: var(--darkBrown);
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+}
+
+.rights{
+    color: var(--white);
+    font-size: 3vw;
+}
+
+.footer-link a{
+    padding: 2px;
+    color: var(--white);
+    font-size: 1.75vw; 
+}
+
+.footer-link a:hover{
+    padding: 2px;
+    background: var(--white);
+    color:var(--black);
+    border-radius: 3px;
+    transition: .5s;
+    font-size: 1.75vw;
+    text-decoration: none;
+}
+
+/* Para tablets */
+@media screen and (min-width: 600px) {
+    .container{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: 
+        "header header header"
+        "nav nav nav"
+        "main main main"
+        "footer footer footer";
+    }
+    
+    .container_login{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: 
+        "header header header"
+        "main main main"
+        "footer footer footer";
+    }
+
+    .container_index{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: 
+        "header header header"
+        "banner banner banner"
+        "main main sidebar"
+        "footer footer footer";
+    }
+
+    #logo-img{ /*imagen logo*/
+        width: 30%;
+    }
+
+    .nav{
+        max-height: none;
+        top: 0;
+        position: relative;
+        float: left;
+        width: fit-content;
+        background-color: transparent;
+    }
+    .menu li{
+        float: left;
+    }
+
+    .menu a{
+        font-size: 10px;
+    }
+
+    .hamb{
+        display: none;
+    }
+}
+
+/* Para desktop*/
+@media screen and (min-width: 780px) {
+    .container{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+        "header header header header"
+        "nav nav nav nav"
+        "main main main main"
+        "footer footer footer footer";;
+    }
+
+    .container_login{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+        "header header header header"
+        "main main main main"
+        "footer footer footer footer";
+    }
+
+    .container_index{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+        "header header header header"
+        "banner banner banner banner"
+        "main main main sidebar"
+        "footer footer footer footer";
+    }
+
+    #logo-img{ /*imagen logo*/
+        width: 30%;
+    }
+
+    .menu a{
+        font-size: 14px;
+    }
+}
