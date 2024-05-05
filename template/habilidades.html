@@ -5,64 +5,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/css/camilo.css">
+    <link rel="stylesheet" href="../static/css/style.css">
     <title>WebfolioCreations</title>
 </head>
 
 <body>
-    <header>
-        <img src="" alt="logo">
-        <nav>
-            <ul>
-                <li> <a href="../index.html">Inicio</a> </li>
-                <li><a href="sobremi.html">Sombre Mi</a></li>
-                <li><a href="experencia_laboral.html">Experiencia de Trabajo</a></li>
-                <li><a href="proyectos.html">Proyectos</a></li>
-                <li><a href="habilidades.html">Habilidades</a></li>
-                <li><a href="">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Contenido principal -->
-    
-    <section class="habilidades">
-        <h1>Habilidades</h1>
-      
-        <div class="contenedor_tarjetas">
-            <div class="tarjeta">
-                
-                <form id="form_habilidad_1">
-                    <label for="tecnologia1">Tecnología</label>
-                    <input type="text" id="tecnologia1" name="tecnologia1" placeholder="HTML, CSS, JavaScript, etc." required>
-            
-                    <label for="descripcion_habilidad1">Descripción</label>
-                    <textarea id="descripcion_habilidad1" name="descripcion_habilidad1" placeholder="Describe cómo aprendiste esta tecnología y tu experiencia con ella..." rows="4" required></textarea>
-            
-                    <button type="submit">Agregar</button>
-                </form>
-           
-            </div> 
-       
-            <div class="boton_agregar_tarjeta">
-                <button id="agregar_tarjeta">Agregar Tarjeta</button>
+    <div class="container">
+        <header>
+            <div id="logo">
+                <a href="../index.html">
+                    <img src="../static/img/logo-only-noBackground.png" alt="logo" id="logo-img">
+                </a>
+                <h1>Webfolio Creations</h1>
             </div>
-        </div>
-    </section>
-
-    
-    <!-- Pie de pagina -->
-    <footer>
-        <div>
-            <div>
-                <h6>Todos los derechos reservados| Diseñado por Na7ux, Darkatos y Sacashhh| 2024
-                </h6>
+            <div id="login">
+                <a href="./login.html">Iniciar Sesion</a>
             </div>
-            <div class="soporte">
-                <h6><a href="">Soporte</a></h6>
-            </div>
-        </div>
-    </footer>
+        </header>
+        <div class="navbar">        
+            <input type="checkbox" name="" id="check">
+            <label class="hamb" for="check"><span class="hamb-line"></span></label>
+            <nav class="nav">
+                <ul class="menu nobullets">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="./sobremi.html">Sobre Mi</a></li>
+                    <li><a href="./experencia_laboral.html">Experiencia de Trabajo</a></li>
+                    <li><a href="./proyectos.html">Proyectos</a></li>
+                    <li><a href="./habilidades.html">Habilidades</a></li>
+                    <li><a href="./contacto.html">Contacto</a></li>
+                </ul>
+            </nav>       
+        </div>       
+        <!-- Contenido principal -->
 
+        <main class="habilidades">
+            <h1>Habilidades</h1>
+
+            <div class="contenedor_tarjetas">
+                <div class="tarjeta">
+
+                    <form id="form_habilidad_1">
+                        <label for="tecnologia1">Tecnología</label>
+                        <input type="text" id="tecnologia1" name="tecnologia1" placeholder="HTML, CSS, JavaScript, etc."
+                            required>
+
+                        <label for="descripcion_habilidad1">Descripción</label>
+                        <textarea id="descripcion_habilidad1" name="descripcion_habilidad1"
+                            placeholder="Describe cómo aprendiste esta tecnología y tu experiencia con ella..." rows="4"
+                            required></textarea>
+
+                        <button type="submit">Agregar</button>
+                    </form>
+
+                </div>
+
+                <div class="boton_agregar_tarjeta">
+                    <button id="agregar_tarjeta">Agregar Tarjeta</button>
+                </div>
+            </div>
+        </main>
+
+
+        <!-- Pie de pagina -->
+        <footer class="text-centered">
+            <div class="rights">
+                <h6>Todos los derechos reservados | Diseñado por El trio maravilla - 2024</h6>
+            </div>
+            <div class="footer-link">
+                <a href="./soporte.html">Soporte</a>
+            </div>
+        </footer>
+    </div>
 </body>
 
 </html>

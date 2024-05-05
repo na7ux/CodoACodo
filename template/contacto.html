@@ -1,79 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../static/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../static/css/style.css">
     <title>Contactar</title>
 </head>
+
 <body>
-    <!--    Arriba del Banner   -->
-    <header>
-        <img src="#" alt="logo">
-        <h1>Webfolio Creations</h1>
-    </header>
-      <!--    Navegador   -->
-    <nav>
-        <ul>
-            <li><a href="../index.html">Inicio</a></li>
-            <li><a href="sobremi.html">Sobre Mi</a></li>
-            <li><a href="#">Experiencia Laboral</a></li>
-            <li><a href="proyectos.html">Proyectos</a></li>
-            <li><a href="#">Habilidades</a></li>
-            <li><a href="#">Contactar</a</li>
-        </ul>
-    </nav>
-      
-    <!--    Contenido Principal -->   
-    <div class="contacto">
-        <h2>Contacto</h2>
-
-        <div class="form">
-            <form action="#">
-                <label for="empresa">Empresa:</label>
-                <input type="text" name="empresa" id="empresa"  required>
-                
-                <label for="telefono">Telefono:</label>
-                <input type="tel" name="telefono" id="telefono">
-                
-                <label for="email">Email:</label>
-                <input type="email" name="email" id="email" placeholder="email@emal.com" required>
-
-                <label for="whatsapp">¿Quieres que te contacten por whatsapp?:</label>
-                
-                <input type="radio" name="whatsapp" id="siWhatsApp"  value="si" checked>
-                <label for="siWhatsApp">Sí</label>
-
-                <input type="radio" name="whatsapp" id="noWhatsApp" value="no">
-                <label for="noWhatsApp">No</label>
-
-                <label for="asunto">Asunto:</label>
-                <input type="text" name="asunto" id="asunto" placeholder="Entrevista">
-
-                <label for="mensaje">Mensaje:</label>
-                <input type="text" name="mensaje" id="mensaje" placeholder="Escribe tu mensaje aqui...">
-            </form>
+    <div class="container">
+        <header>
+            <div id="logo">
+                <a href="../index.html">
+                    <img src="../static/img/logo-only-noBackground.png" alt="logo" id="logo-img">
+                </a>
+                <h1>Webfolio Creations</h1>
+            </div>
+            <div id="login">
+                <a href="./login.html">Iniciar Sesion</a>
+            </div>
+        </header>
+        <!--    Navegador   -->
+        <div class="navbar">
+            <input type="checkbox" name="" id="check">
+            <label class="hamb" for="check"><span class="hamb-line"></span></label>
+            <nav class="nav">
+                <ul class="menu nobullets">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="./sobremi.html">Sobre Mi</a></li>
+                    <li><a href="./experencia_laboral.html">Experiencia de Trabajo</a></li>
+                    <li><a href="./proyectos.html">Proyectos</a></li>
+                    <li><a href="./habilidades.html">Habilidades</a></li>
+                    <li><a href="./contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
         </div>
 
-        <!-- Botones -->
-        <div class="botones">
-            <button type="button" onclick="">Enviar</button>
-            <button type="button" onclick=""> Cancelar</button>
+        <!--    Contenido Principal -->
+        <div class="contacto">
+            <h2>Contacto</h2>
+
+            <div class="form">
+                <form action="#">
+                    <label for="empresa">Empresa:</label>
+                    <input type="text" name="empresa" id="empresa" required>
+
+                    <label for="telefono">Telefono:</label>
+                    <input type="tel" name="telefono" id="telefono">
+
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" placeholder="email@emal.com" required>
+
+                    <label for="whatsapp">¿Quieres que te contacten por whatsapp?:</label>
+
+                    <input type="radio" name="whatsapp" id="siWhatsApp" value="si" checked>
+                    <label for="siWhatsApp">Sí</label>
+
+                    <input type="radio" name="whatsapp" id="noWhatsApp" value="no">
+                    <label for="noWhatsApp">No</label>
+
+                    <label for="asunto">Asunto:</label>
+                    <input type="text" name="asunto" id="asunto" placeholder="Entrevista">
+
+                    <label for="mensaje">Mensaje:</label>
+                    <input type="text" name="mensaje" id="mensaje" placeholder="Escribe tu mensaje aqui...">
+                </form>
+            </div>
+
+            <!-- Botones -->
+            <div class="botones">
+                <button type="button" onclick="">Enviar</button>
+                <button type="button" onclick=""> Cancelar</button>
+            </div>
+
+            <!-- Imagen -->
+            <div class="imagen_contacto">
+                <img src="" alt="imagen_contacto">
+            </div>
         </div>
 
-        <!-- Imagen -->
-        <div class="imagen_contacto">
-            <img src="" alt="imagen_contacto">
-        </div>
+        <!--    Pie de Pagina   -->
+        <footer class="text-centered">
+            <div class="rights">
+                <h6>Todos los derechos reservados | Diseñado por El trio maravilla - 2024</h6>
+            </div>
+            <div class="footer-link">
+                <a href="./soporte.html">Soporte</a>
+            </div>
+        </footer>
     </div>
-
-    <!--    Pie de Pagina   -->
-    <footer>
-        <div>
-            <img src="" alt="logo">
-            <h1>Webfolio Creations</h1>
-            <h6>Desarrollado para Codo A Codo - Argentina - 2024</h6>
-            <a href="#">Ayuda</a>
-      </div>
-    </footer>
 </body>
+
 </html>
