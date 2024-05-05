@@ -1,0 +1,157 @@
+
+
+/* variables de color */
+
+:root {
+  --white: rgb(255, 255, 255); /* Blanco */
+  --light-gray: rgb(213, 231, 240); /* Gris claro */
+  --grayish-blue: rgb(150, 173, 193); /* Azul grisáceo */
+  --dark-blue: rgb(24, 45, 73); /* Azul oscuro */
+  --black: rgb(0, 0, 0); /* Negro */
+  --blue: rgb(0, 122, 255); /* Azul */
+  
+}
+
+*{
+  text-decoration: none;
+}
+
+/* Genericos  */
+
+.contenedor_tarjetas{
+  width: 100%;
+  max-width: 1200%;
+  height: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: auto;
+  align-items: center;
+}
+
+.tarjeta {
+  height: 400px;
+  width: 300px;
+  border-radius: 10px;
+  padding: 15px; /* Espaciado interno */
+  margin-bottom: 20px; 
+  position: relative;
+  flex-direction: column;
+  background-color: var(--light-gray);
+  box-shadow: 0 4px 8px var(--black); /* Sombra */
+}
+
+.tarjeta label{
+  color: var(--black); /* Color del texto */
+  margin-bottom: 5px; /* Espaciado inferior */
+  display: block; 
+  text-decoration: none;
+  text-align: left;
+}
+
+.tarjeta input{
+  margin-bottom: 15px; /* Espaciado inferior */
+  padding: 8px;
+  border: 1px solid var(--black);
+  border-radius: 5px;
+  width: 280px;
+}
+
+.tarjeta button{ 
+  left: 50%; 
+  bottom: 10px;
+  position: absolute;
+  transform: translateX(-50%); /* Esto sirve para centrarlo */
+  background-color: var(--grayish-blue);
+  color: var(--black);
+}
+
+.boton_agregar_tarjeta button {
+  padding: 8px 12px;
+  font-size: 15px; 
+  background-color: var(--light-gray);
+  color: var(--black);
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px var(--black); /* Sombra */
+  transition: background-color 0.3s ease;
+}
+
+
+#agregar_tarjeta:hover {
+  background-color: var(--blue); /* Color de fondo al pasar el mouse */
+}
+
+
+
+/* Estilos para las tarjetas de Experiencia Laboral */
+
+.experencia h1{
+  color: var(--black);
+  font-size: 35px;
+  text-align: left;
+  margin-left: 35px;
+  box-decoration-break: unset;
+}
+
+.tarjeta .anios {
+  display: flex;
+}
+
+.tarjeta .anios input{
+  flex: 1; /* El input ocupará todo el espacio disponible */
+  margin-right: 10px; /* Espacio entre los inputs */
+}
+
+.tarjeta textarea.cuentame_mas {
+  width: 280px;
+  height: 100px;
+  padding: 8px;
+  border: 1px solid var(--black);
+  border-radius: 5px;
+  resize: none; /* Evita que el usuario pueda redimensionar el textarea */
+}
+
+.tarjeta textarea.cuentame_mas::placeholder {
+  color: var(--black); /* Color del placeholder */
+}
+
+
+/* Estilos para las tarjetas de  Habilidades */
+
+.habilidades h1{
+  color: var(--black);
+  font-size: 35px;
+  text-align: left;
+  margin-left: 35px;
+  box-decoration-break: unset;
+}
+
+.habilidades .tarjeta textarea{
+  height: 200px; 
+  width: 280px;
+  padding: 8px;
+  border: 1px solid var(--black);
+  border-radius: 5px;
+  resize: none;
+}
+
+
+/* Estilos para las tarjetas de Proyectos */
+
+.proyectos h1{
+  color: var(--black);
+  font-size: 35px;
+  text-align: left;
+  margin-left: 35px;
+  box-decoration-break: unset;
+}
+
+.proyectos .tarjeta textarea{
+  height: 160px; 
+  width: 280px;
+  padding: 8px;
+  border: 1px solid var(--black);
+  border-radius: 5px;
+  resize: none;
+}

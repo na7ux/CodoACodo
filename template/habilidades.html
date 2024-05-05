@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/static/css/camilo.css">
     <title>WebfolioCreations</title>
 </head>
 
@@ -15,7 +15,7 @@
             <ul>
                 <li> <a href="../index.html">Inicio</a> </li>
                 <li><a href="sobremi.html">Sombre Mi</a></li>
-                <li><a href="">Experiencia de Trabajo</a></li>
+                <li><a href="experencia_laboral.html">Experiencia de Trabajo</a></li>
                 <li><a href="proyectos.html">Proyectos</a></li>
                 <li><a href="habilidades.html">Habilidades</a></li>
                 <li><a href="">Contacto</a></li>
@@ -23,30 +23,34 @@
         </nav>
     </header>
 
-    <section>
-        <div class="contenedor_habilidades">
-            <div class="habilidad">
-                <img src="img/Habilidades.png" height="75" width="100" alt="logo habilidades">
-                <h3>Habilidad</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, in molestias voluptate
-                    reiciendis perferendis nobis!</p>
+    <!-- Contenido principal -->
+    
+    <section class="habilidades">
+        <h1>Habilidades</h1>
+        <div class="contenedor_tarjetas">
+            <div class="tarjeta">
+    
+                <form id="form_habilidad_1">
+                    <label for="tecnologia1">Tecnología</label>
+                    <input type="text" id="tecnologia1" name="tecnologia1" placeholder="HTML, CSS, JavaScript, etc." required>
+    
+                    <label for="descripcion_habilidad1">Descripción</label>
+                    <textarea id="descripcion_habilidad1" name="descripcion_habilidad1" placeholder="Cuantos años practicando y estudiando esta habilidad, cómo la adquirió y cuéntenos más..." rows="6" required></textarea>
+    
+                    <button type="submit">Agregar</button>
+                </form>
+    
             </div>
-            <div class="habilidad">
-                <img src="img/Habilidades.png" height="75" width="100" alt="logo habilidades">
-                <h3>Habilidad</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, in molestias voluptate
-                    reiciendis perferendis nobis!</p>
+    
+            <div class="boton_agregar_tarjeta">
+                <button id="agregar_tarjeta">Agregar Tarjeta</button>
             </div>
-            <div class="habilidad">
-                <img src="img/Habilidades.png" height="75" width="100" alt="logo habilidades">
-                <h3>Habilidad</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, in molestias voluptate
-                    reiciendis perferendis nobis!</p>
-            </div>
-
         </div>
-
     </section>
+    
+
+    
+    <!-- Pie de pagina -->
     <footer>
         <div>
             <div>

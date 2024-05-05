@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/static/css/camilo.css">
     <title>WebfolioCreations</title>
 </head>
 
@@ -15,55 +15,42 @@
         <h1>Webfolio Creations</h1>
     </header>
     <nav>
-        <a href="../index.html">Inicio</a>
-        <a href="sobremi.html">Sobre Mi</a>
-        <a href="">Experiencia de Trabajo</a>
-        <a href="">Proyectos</a>
-        <a href="habilidades.html">Habilidades</a>
-        <a href="">Contacto</a>
-
+        <a href="#">Inicio</a>
+        <a href="#">Sobre Mi</a>
+        <a href="#">Experiencia de Trabajo</a>
+        <a href="#">Proyectos</a>
+        <a href="#">Habilidades</a>
+        <a href="#">Contacto</a>
     </nav>
 
-    <section>
-        <h2>Proyectos</h2>
+    <!-- Contenido Principal -->
+    <section class="proyectos">
+        <h1>Proyectos</h1>
+    
+        <div class="contenedor_tarjetas">
+            <div class="tarjeta">
 
-        <div class="contenedor_proyecto">
-            <div class="proyecto1">
-                <div class="img_proyecto1">
-                    <img src="img/p1.png" height="100" width="100" alt="foto_perfil">
-                </div>
-                <h3>Proyecto</h3>
-                <div class="descripcion"></div>
-                <h4>Descripció</h4>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto distinctio dolorem quos porro, soluta
-                    assumenda! Modi reiciendis pariatur suscipit quisquam!</p>
+                <form id="form_proyecto_1">
+                    <label for="titulo_proyecto1">Título del Proyecto</label>
+                    <input type="text" id="titulo_proyecto1" name="titulo_proyecto1" placeholder="Título del Proyecto" required>
+    
+                    <label for="imagen_proyecto1">Imagen del Proyecto</label>
+                    <input type="file" id="imagen_proyecto1" name="imagen_proyecto1" accept="image/*" required>
+    
+                    <label for="descripcion_proyecto1">Descripción del Proyecto</label>
+                    <textarea id="descripcion_proyecto1" name="descripcion_proyecto1" placeholder="Describe el proyecto..." rows="4" required></textarea>
+    
+                    <button type="submit">Agregar Proyecto</button>
+                </form>
             </div>
-            <div class="proyecto2">
-                <div class="img_proyecto2">
-                    <img src="img/p1.png" height="100" width="100" alt="foto_perfil">
-                </div>
-                <h3>Proyecto</h3>
-                <div class="descripcion"></div>
-                <h4>Descripció</h4>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto distinctio dolorem quos porro, soluta
-                    assumenda! Modi reiciendis pariatur suscipit quisquam!</p>
-            </div>
-            <div class="proyecto3">
-
-                <div class="img_proyecto3">
-                    <img src="img/p1.png" height="100" width="100" alt="foto_perfil">
-                </div>
-                <h3>Proyecto</h3>
-                <div class="descripcion"></div>
-                <h4>Descripció</h4>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto distinctio dolorem quos porro, soluta
-                    assumenda! Modi reiciendis pariatur suscipit quisquam!</p>
+            
+            <div class="boton_agregar_tarjeta">
+                <button id="agregar_tarjeta">Añadir Proyecto</button>
             </div>
         </div>
     </section>
-
-
-
+    
+    <!-- Pie de pagina -->
     <footer>
         <div>
             <h6>Todos los derechos reservados| Diseñado por Na7ux, Darkatos y Sacashhh| 2024

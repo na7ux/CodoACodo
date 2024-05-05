@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="#">
+    <link rel="stylesheet" href="/static/css/camilo.css">
     <title>Experencia</title>
 </head>
 
@@ -16,10 +17,10 @@
     <!--    Navegador   -->
     <nav>
         <ul>
-            <li><a href="../index.html">Inicio</a></li>
-            <li><a href="sobremi.html">Sobre Mi</a></li>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Sobre Mi</a></li>
             <li><a href="#">Experiencia Laboral</a></li>
-            <li><a href="proyectos.html">Proyectos</a></li>
+            <li><a href="#">Proyectos</a></li>
             <li><a href="#">Habilidades</a></li>
             <li><a href="#">Contactar</a</li>
         </ul>
@@ -27,29 +28,60 @@
     
     <!--    Contenido Principal -->    
     <section class="experencia">
-        <h2>Experencia Laboral</h2>
+        <h1>Experencia Laboral</h1>
     
-        <div class="tarjeta">
-            <p class="empresa">Empresa: <span id="empresa1"></span></p>
-            <p class="anios">Años: <span id="anios1"></span></p>
-            <p class="cargo">Cargo y Ocupacion: <span id="cargo1"></span></p>
-        </div>
-        
-        <div class="tarjeta">
-            <p class="empresa">Empresa: <span id="empresa2"></span></p>
-            <p class="anios">Años: <span id="anios2"></span></p>
-            <p class="cargo">Cargo y Ocupacion: <span id="cargo2"></span></p>
-        </div>
-        
-        <div class="tarjeta">
-            <p class="empresa">Empresa: <span id="empresa3"></span></p>
-            <p class="anios">Años: <span id="anios3"></span></p>
-            <p class="cargo">Cargo y Ocupacion: <span id="cargo3"></span></p>
-        </div>
-        
-        <button id="agregar_tarjeta">Añadir Experencia Laboral</button>
+        <div class="contenedor_tarjetas">
+            <div class="tarjeta">
+                <form id="form_exp_1">
+                    <label for="empresa1">Empresa</label>
+                    <input type="text" id="empresa1" name="empresa1" placeholder="Webfolio Creations" required>
+                    
+                    <label for="inicio1">Años</label>
+                    <div class="anios" >
+                        <input type="number" id="inicio1" name="inicio1" placeholder="Año de inicio" min="1900" max="2099" required>
+                        <input type="number" id="fin1" name="fin1" placeholder="Año de fin" min="1900" max="2099" required>                        
+                    </div>
 
-    </section>    
+                    <label for="cargo1">Cargo</label>
+                    <input type="text" id="cargo1" class="cargo" name="cargo1" placeholder="Jefe en Ciberseguridad">
+                    
+                    <label for="mas_info1">Cuentame más...</label>
+                    <textarea id="mas_info1" class="cuentame_mas" name="mas_info1" placeholder="Describe tus responsabilidades..." rows="1"></textarea>
+                    
+                    <button type="submit">Agregar</button>
+                </form>
+            </div>
+            
+            <div class="tarjeta">
+                <form id="form_exp_2">
+                    <label for="empresa2">Empresa</label>
+                    <input type="text" id="empresa2" name="empresa2" placeholder="Webfolio Creations" required>
+                    
+                    <label for="inicio2">Años</label>
+                    <div class="anios">
+                        <input type="number" id="inicio2" name="inicio2" placeholder="Año de inicio" min="1900" max="2099" required>
+                        <input type="number" id="fin2" name="fin2" placeholder="Año de fin" min="1900" max="2099" required>                        
+                    </div>
+                
+                    <label for="cargo2">Cargo</label>
+                    <input type="text" id="cargo2" class="cargo" name="cargo2" placeholder="Jefe en Ciberseguridad">
+                    
+                    <label for="mas_info2">Cuentame más...</label>
+                    <textarea id="mas_info2" class="cuentame_mas" name="mas_info2" placeholder="Describe tus responsabilidades..." rows="1"></textarea>
+                    
+                    <button type="submit">Agregar</button>
+                </form>
+            </div>
+            
+            
+            <div class="boton_agregar_tarjeta">
+                <button id="agregar_tarjeta">Añadir Tarjeta</button>
+            </div>
+            
+            
+        </div>
+    </section>
+
     <!--    Pie de Pagina   -->
     <footer>
         <div>
