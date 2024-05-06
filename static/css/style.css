@@ -308,6 +308,11 @@ main{
     padding: 20px;
 }
 
+/*||SIDEBAR*/
+.sidebar{
+    background-color: var(--darkBrown);
+    grid-area: sidebar;
+}
 
 /*FOOTER*/
 footer{
