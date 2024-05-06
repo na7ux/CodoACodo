@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <dic class="container">
+    <div class="container">
         <header>
             <div id="logo">
                 <a href="../index.html">
@@ -22,32 +22,39 @@
                 <a href="./login.html">Iniciar Sesion</a>
             </div>
         </header>
-        <div class="navbar">        
+        <div class="navbar">
             <input type="checkbox" name="" id="check">
             <label class="hamb" for="check"><span class="hamb-line"></span></label>
             <nav class="nav">
                 <ul class="menu nobullets">
                     <li><a href="../index.html">Inicio</a></li>
                 </ul>
-            </nav>       
-        </div>        
+            </nav>
+        </div>
         <main>
-            <h2>Soporte</h2>
-            <form action="" class="text-centered">
-                <label for="">Nombre y Apellido</label>
-                <input type="text">
-                <br>
-                <br>
-                <label for="">Mail: </label>
-                <input type="text" name="" id="">
-                <br>
-                <br>
-                <label for="">Mensaje: </label>
-                <input type="text" name="" id="">
-                <br><br>
-                <input type="button" value="Enviar">
-                <input type="button" value="Cancelar">
-            </form>
+            <div class="section">
+                <h2>Soporte</h2>
+                <form action="" class="text-centered" id="login">
+                    <div class="form">
+                        <div class="fields">
+                            <label for="login">Nombre y Apellido: </label>
+                            <input type="text" name="nombreyapellido" placeholder="" required>
+                        </div>
+                        <div class="fields">
+                            <label for="login">Mail: </label>
+                            <input type="text" name="mail" placeholder="email@email.com" required>
+                        </div>
+                        <div class="fields">
+                            <label for="login">Mensaje: </label>
+                            <textarea name="mensaje" id="" placeholder="Escriba su mensaje aquí..." required></textarea>
+                        </div>  
+                        <div class="buttons">
+                            <input type="submit" value="Enviar">
+                            <input type="reset" value="Cancelar">
+                        </div>
+                    </div>
+                </form>
+            </div>
         </main>
         <footer class="text-centered">
             <div class="rights">
@@ -57,7 +64,7 @@
                 <a href="./soporte.html">Soporte</a>
             </div>
         </footer>
-    </dic>
+    </div>
 </body>
 
 </html>

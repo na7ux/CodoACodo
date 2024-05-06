@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,63 +24,90 @@
         </header>
 
         <!--    Navegador  -->
-        <div class="navbar">        
+        <div class="navbar">
             <input type="checkbox" name="" id="check">
             <label class="hamb" for="check"><span class="hamb-line"></span></label>
             <nav class="nav">
                 <ul class="menu nobullets">
                     <li><a href="../index.html">Inicio</a></li>
                 </ul>
-            </nav>       
-        </div>     
-    <!--    Contenido Principal -->
-    <section    class="Registro">
-        <h2>Registro</h2>
+            </nav>
+        </div>
+        <!--    Contenido Principal -->
+        <main>
+            <div class="section">
+                <h2>Registro</h2>
 
-        <!-- Pedir datos al usuario -->
-        <div class="form">
-            <form action="#">
-                <label for="nombre">Nombre: </label>
-                <input type="text" id="nombre" name="nombre" required>
-    
-                <label for="apellido">Apellido: </label>
-                <input type="text" id="apellido" name="apellido" required>
-                
-                <label for="email">Email: </label>
-                <input type="email"  id="email" name="email" required>
-    
-                <label for="telefono">Telefono: </label>
-                <input type="tel" name="telefono" id="telefono">
-    
-                <label for="usuario">Usuario: </label>
-                <input type="text" name="usuario" id="usuario" required>
-                
-                <label for="contrasena">Contraseña: </label>
-                <input type="password" name="contrasena" id="contrasena" required>
-            </form> 
-        </div>
+                <!-- Pedir datos al usuario -->
+                <form action="#">
+                    <div class="form text-centered">
+                        <div class="fields">
+                            <label for="nombre">Nombre: </label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="fields">
+                            <label for="apellido">Apellido: </label>
+                            <input type="text" id="apellido" name="apellido" required>
+                        </div>
+                        <div class="fields">
+                            <label for="email">Email: </label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="fields">
+                            <label for="telefono">Telefono: </label>
+                            <input type="tel" name="telefono" id="telefono">
+                        </div>
+                        <div class="fields">
+                            <label for="usuario">Usuario: </label>
+                            <input type="text" name="usuario" id="usuario" required>
+                        </div>
+                        <div class="fields">
+                            <label for="contrasena">Contraseña: </label>
+                            <input type="password" name="contrasena" id="contrasena" required>
+                        </div>
+                        <div class="fields">
+                            <label for="fotoperfil">Elija su foto de perfil</label>
+                            <input type="file" name="fotoperfil" id="">
+                            <input type="button" value="Guardar">
+                            <img src="" alt="imagen_registro">
+                        </div>
 
-        <!-- Botones -->
-        <div class="botones">
-            <button type="submit">Guardar</button>
-            <button type="button" onclick=""> Cancelar</button>
-        </div>
-        <!-- Imagen -->
-        <div class="imagen_registro">
-            <img src="" alt="imagen_registro">
-        </div>
 
-    </section>
 
-    <!--    Pie de Pagina   -->
-    <footer class="text-centered">
-        <div class="rights">
-            <h6>Todos los derechos reservados | Diseñado por El trio maravilla - 2024</h6>
-        </div>
-        <div class="footer-link">
-            <a href="./soporte.html">Soporte</a>
-        </div>
-    </footer>
+
+
+
+
+
+
+
+
+                    </div>
+                </form>
+
+                <!-- Botones -->
+                <div class="botones">
+                    <button type="submit">Guardar</button>
+                    <button type="button" onclick=""> Cancelar</button>
+                </div>
+                <!-- Imagen -->
+                <div class="imagen_registro">
+
+                </div>
+
+            </div>
+        </main>
+
+        <!--    Pie de Pagina   -->
+        <footer class="text-centered">
+            <div class="rights">
+                <h6>Todos los derechos reservados | Diseñado por El trio maravilla - 2024</h6>
+            </div>
+            <div class="footer-link">
+                <a href="./soporte.html">Soporte</a>
+            </div>
+        </footer>
 
 </body>
+
 </html>

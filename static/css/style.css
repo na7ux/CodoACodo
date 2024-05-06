@@ -26,6 +26,88 @@ h2{
     text-align: center;
 }
 
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.fields{
+    display: inherit;
+    flex-direction: column;
+    width: 100%;
+    margin: 10px;
+}
+
+.buttons{
+    display: inherit;
+    justify-content: center;
+    margin: 10px;
+}
+
+.fields input[type=text], input[type=tel], input[type=email],
+    input[type=password], textarea{
+    font-size: 3vw;
+    background-color: var(--white);
+    border: none;
+    border: 1px solid var(--grey);
+    border-bottom: 2px solid var(--black);
+    padding: 4px 2px;
+    margin: 4px 0;
+    box-sizing: border-box;
+    resize: none;
+}
+
+.fields input[type=text]:focus, input[type=tel]:focus, input[type=email]:focus,
+    input[type=email]:focus, textarea:focus{
+    border: 5px solid var(--darkBrown);
+}
+
+.fields input[type=radio], input[radio]:checked{
+    margin: 4px 0;
+    padding: 4px 2px;
+}
+
+.buttons input[type="button"], input[type=submit], input[type=reset]{
+    cursor: pointer;
+    border: none;
+    background-color: var(--black);
+    color: var(--white);
+    padding: 10px 20px;
+    margin: 6px 4px;
+    transition: .5s;
+}
+
+.buttons input[type="button"]:hover, input[type=submit]:hover, input[type=reset]:hover{
+    cursor: pointer;
+    border: 1px solid var(--black);
+    background-color: var(--white);
+    color: var(--black);
+    padding: 10px 20px;
+    margin: 6px 4px;
+    transition: .5s;
+}
+
+.fields label{
+    font-size: 3.5vw;
+}
+
+.profile-img{ /*contenedpr imagen de perfil sobremi.html*/
+    display: flex;
+    justify-content: center;
+}
+
+.profile-img img { /*imagen de perfil sobremi.html*/
+    padding: 5px;
+    width: 40%;
+}
+
+.section{ /*Contenedor de secciones*/
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .text{
     padding:2vw;
     font-size: 2vw;
@@ -78,8 +160,6 @@ h2{
     "main"
     "sidebar"
     "footer";
-    column-gap:  2px;
-    row-gap: 2px;
     align-items: center;
 }
 
@@ -228,21 +308,6 @@ main{
     padding: 20px;
 }
 
-#about-me{ /*Contenedor seccion Sobre Mi - sobremi.html*/
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.profile-img{
-    display: flex;
-    justify-content: center;
-}
-
-.profile-img img {
-    padding: 5px;
-    width: 40%;
-}
 
 /*FOOTER*/
 footer{

@@ -39,47 +39,51 @@
         </div>
 
         <!--    Contenido Principal -->
-        <div class="contacto">
-            <h2>Contacto</h2>
-
-            <div class="form">
+        <main class="contacto">
+            <div class="section">
+                <h2>Contacto</h2>
+                 <!-- Imagen -->
+                <div class="profile-img">
+                    <img src="../static/img/profile-pic.png" alt="imagen_contacto">
+                </div>
                 <form action="#">
-                    <label for="empresa">Empresa:</label>
-                    <input type="text" name="empresa" id="empresa" required>
-
-                    <label for="telefono">Telefono:</label>
-                    <input type="tel" name="telefono" id="telefono">
-
-                    <label for="email">Email:</label>
-                    <input type="email" name="email" id="email" placeholder="email@emal.com" required>
-
-                    <label for="whatsapp">¿Quieres que te contacten por whatsapp?:</label>
-
-                    <input type="radio" name="whatsapp" id="siWhatsApp" value="si" checked>
-                    <label for="siWhatsApp">Sí</label>
-
-                    <input type="radio" name="whatsapp" id="noWhatsApp" value="no">
-                    <label for="noWhatsApp">No</label>
-
-                    <label for="asunto">Asunto:</label>
-                    <input type="text" name="asunto" id="asunto" placeholder="Entrevista">
-
-                    <label for="mensaje">Mensaje:</label>
-                    <input type="text" name="mensaje" id="mensaje" placeholder="Escribe tu mensaje aqui...">
+                    <div class="form">
+                        <div class="fields">
+                            <label for="empresa">Empresa:</label>
+                            <input type="text" name="empresa" id="empresa" required>
+                        </div>
+                        <div class="fields">
+                            <label for="telefono">Telefono:</label>
+                            <input type="tel" name="telefono" id="telefono">
+                        </div>
+                        <div class="fields">
+                            <label for="email">Email:</label>
+                            <input type="email" name="email" id="email" placeholder="email@email.com" required>
+                        </div>
+                        <div class="fields">
+                            <label for="whatsapp">¿Quieres que te contacten por whatsapp?:</label>
+                            <input type="radio" name="whatsapp" id="siWhatsApp" value="si" checked>
+                            <label for="siWhatsApp">Sí</label>
+                            <input type="radio" name="whatsapp" id="noWhatsApp" value="no">
+                            <label for="noWhatsApp">No</label>
+                        </div>
+                        <div class="fields">
+                            <label for="asunto">Asunto:</label>
+                            <input type="text" name="asunto" id="asunto" placeholder="Entrevista">
+                        </div>
+                        <div class="fields">
+                            <label for="mensaje">Mensaje:</label>
+                            <input type="text" name="mensaje" id="mensaje" placeholder="Escribe tu mensaje aqui...">
+                        </div>
+                        <!-- Botones -->
+                        <div class="buttons">
+                            <input type="submit" value="Enviar"></input>
+                            <input type="reset" value="Cancelar"></input>
+                        </div>
+                    </div>
                 </form>
             </div>
-
-            <!-- Botones -->
-            <div class="botones">
-                <button type="button" onclick="">Enviar</button>
-                <button type="button" onclick=""> Cancelar</button>
-            </div>
-
-            <!-- Imagen -->
-            <div class="imagen_contacto">
-                <img src="" alt="imagen_contacto">
-            </div>
-        </div>
+        </main>
 
         <!--    Pie de Pagina   -->
         <footer class="text-centered">
