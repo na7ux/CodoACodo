@@ -5,64 +5,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/dark.css">
     <title>WebfolioCreations</title>
 </head>
 
 <body>
-    <header>
+    <!--<header>
         <div class="cabecera">
             <div class="logo">
-                <img src="" alt="logo">
+                <img src="static/img/logo-only-noBackground.png" alt="logo" id="logo-img">
             </div>
-            <div class="login">
-                <button>Iniciar sesion</button>
-                <button>Registrar</button>
-            </div>
-        </div>
 
+        </div>
+    </header> !-->
+
+    <header>
+        <div id="logo">
+            <a href="index.html">
+                <img src="../static/img/logo-only-noBackground.png" alt="logo" id="logo-img">
+            </a>
+            <h1>Webfolio Creations</h1>
+        </div>
+        <div id="login">
+            <a href="./template/login.html">Iniciar Sesion</a>
+            <a href="./template/registro.html">Registrarse</a>
+        </div>
     </header>
-    <nav>
-        <div class="contenedor">
-            <div>
-                <h1>Bienvenidos WEBFOLIO Creations</h1>
-                <div class="navegacion">
+
+    <div class="navbar">
+        <input type="checkbox" name="" id="check">
+        <label class="hamb" for="check"><span class="hamb-line"></span></label>
+        <nav class="nav">
+            <ul class="menu nobullets">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="template/sobremi.html">Sobre Mi</a></li>
+                <li><a href="template/experencia_laboral.html">Experiencia Laboral</a></li>
+                <li><a href="template/proyectos.html">Proyectos</a></li>
+                <li><a href="template/habilidades.html">Habilidades</a></li>
+                <li><a href="template/contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- -->
+    <main>
+        <div class="container_main1">
+
+            <div class="search">
+                <input id="input_search" type="text">
+                <button id="btn_search">BUSCAR</button>
+            </div>
+
+
+            <div class="profile">
+                <div id="titulo_profile">
+                    <h1>ULTIMOS PERFILES CREADOS</h1>
+                </div>
+                <div>
                     <ul>
-                        <li> <a href="index.html">Inicio</a> </li>
-                        <li><a href="static/sobremi.html">Sombre Mi</a></li>
-                        <li><a href="">Experiencia de Trabajo</a></li>
-                        <li><a href="static/proyectos.html">Proyectos</a></li>
-                        <li><a href="static/habilidades.html">Habilidades</a></li>
-                        <li><a href="">Contacto</a></li>
+                        <li><a href="">Médico Clinico, López Javier García</a></li>
+                        <li><a href="">Ingeniero Electronico, Rodríguez Ana María</a></li>
+                        <li><a href="">Abogado, Martínez Juan Carlos</a></li>
+                        <li><a href="">Profesor Literatura, Pérez María José</a></li>
+                        <li><a href="">Diseñador Grafico, Fernández Alejandro</a></li>
                     </ul>
                 </div>
-                <div class="busqueda">
-                    <input type="text">
-                    <button>BUSCAR</button>
-                </div>
-            </div>
-            <div class="perfiles">
-                <h1>ULTIMOS PERFILES CREADOS</h1>
-                <lu>
-                    <li><a href="">Médico Clinico, López Javier García</a></li>
-                    <li><a href="">Ingeniero Electronico, Rodríguez Ana María</a></li>
-                    <li><a href="">Abogado, Martínez Juan Carlos</a></li>
-                    <li><a href="">Profesor Literatura, Pérez María José</a></li>
-                    <li><a href="">Diseñador Grafico, Fernández Alejandro</a></li>
-                </lu>
+
             </div>
         </div>
+    </main>
 
 
 
 
-    </nav>
-    <footer>
-        <div>
-            <h6>Todos los derechos reservados| Diseñado por Na7ux, Darkatos y Sacashhh| 2024
-            </h6>
+
+    <footer class="text-centered">
+        <div class="rights">
+            <h6>Todos los derechos reservados | Diseñado por El trio maravilla - 2024</h6>
         </div>
-        <div class="soporte">
-            <h6><a href="">Soporte</a></h6>
+        <div class="footer-link">
+            <a href="template/soporte.html">Soporte</a>
         </div>
     </footer>
 </body>
