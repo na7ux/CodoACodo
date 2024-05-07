@@ -5,88 +5,168 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/css/style.css">
-    <link rel="stylesheet" href="static/css/dark.css">
     <title>WebfolioCreations</title>
 </head>
 
 <body>
-    <!--<header>
-        <div class="cabecera">
-            <div class="logo">
-                <img src="static/img/logo-only-noBackground.png" alt="logo" id="logo-img">
+    <div class="container_index">
+        <header>
+            <div id="logo">
+                <a href="index.html">
+                    <img src="./static/img/logo-only-noBackground.png" alt="logo" id="logo-img">
+                </a>
+                <h1>Webfolio Creations</h1>
             </div>
-
-        </div>
-    </header> !-->
-
-    <header>
-        <div id="logo">
-            <a href="index.html">
-                <img src="../static/img/logo-only-noBackground.png" alt="logo" id="logo-img">
-            </a>
-            <h1>Webfolio Creations</h1>
-        </div>
-        <div id="login">
-            <a href="./template/login.html">Iniciar Sesion</a>
-            <a href="./template/registro.html">Registrarse</a>
-        </div>
-    </header>
-
-    <div class="navbar">
-        <input type="checkbox" name="" id="check">
-        <label class="hamb" for="check"><span class="hamb-line"></span></label>
-        <nav class="nav">
-            <ul class="menu nobullets">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="template/sobremi.html">Sobre Mi</a></li>
-                <li><a href="template/experencia_laboral.html">Experiencia Laboral</a></li>
-                <li><a href="template/proyectos.html">Proyectos</a></li>
-                <li><a href="template/habilidades.html">Habilidades</a></li>
-                <li><a href="template/contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
-    </div>
-
-    <!-- -->
-    <main>
-        <div class="container_main1">
-
-            <div class="search">
-                <input id="input_search" type="text">
-                <button id="btn_search">BUSCAR</button>
+            <div id="login">
+                <a href="./template/login.html">Iniciar Sesion</a>
+                <a href="./template/registro.html">Registrarse</a>
             </div>
+        </header>
 
+        <div class="banner">
+            <img src="./static/img/banner.png" alt="">
+        </div>
 
-            <div class="profile">
-                <div id="titulo_profile">
-                    <h1>ULTIMOS PERFILES CREADOS</h1>
+        <div class="navbar">
+            <input type="checkbox" name="" id="check">
+            <label class="hamb" for="check"><span class="hamb-line"></span></label>
+            <nav class="nav">
+                <ul class="menu nobullets">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="template/soporte.html">Soporte</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- -->
+        <main>
+            <div class="section">
+
+                <div class="buttons">
+                    <input id="input_search" type="text">
+                    <input type="button" id="btn_search" value="BUSCAR"></button>
                 </div>
-                <div>
-                    <ul>
-                        <li><a href="">Médico Clinico, López Javier García</a></li>
-                        <li><a href="">Ingeniero Electronico, Rodríguez Ana María</a></li>
-                        <li><a href="">Abogado, Martínez Juan Carlos</a></li>
-                        <li><a href="">Profesor Literatura, Pérez María José</a></li>
-                        <li><a href="">Diseñador Grafico, Fernández Alejandro</a></li>
+
+                <div class="results">
+                    <ul class="nobullets">
+                        <li>
+                            <div class="result-profile">
+                                <img src="./static/img/profile-pic.png" alt="">
+                                <div class="result-job-name">
+                                    <p class="result-job">Médico Clinico</p>
+                                    <p class="result-name">López Javier García</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="result-profile">
+                                <img src="./static/img/profile-pic.png" alt="">
+                                <div class="result-job-name">
+                                    <p class="result-job">Médico Clinico</p>
+                                    <p class="result-name">López Javier García</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="result-profile">
+                                <img src="./static/img/profile-pic.png" alt="">
+                                <div class="result-job-name">
+                                    <p class="result-job">Médico Clinico</p>
+                                    <p class="result-name">López Javier García</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="result-profile">
+                                <img src="./static/img/profile-pic.png" alt="">
+                                <div class="result-job-name">
+                                    <p class="result-job">Médico Clinico</p>
+                                    <p class="result-name">López Javier García</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="result-profile">
+                                <img src="./static/img/profile-pic.png" alt="">
+                                <div class="result-job-name">
+                                    <p class="result-job">Médico Clinico</p>
+                                    <p class="result-name">López Javier García</p>
+                                </div>
+                            </div>
+                        </li>
                     </ul>
                 </div>
 
             </div>
+        </main>
+        <div class="sidebar">
+            <h3 class="text-centered">ULTIMOS PERFILES CREADOS</h3>
+            <div>
+                <ul class="nobullets">
+                    <li>
+                        <div class="profile">
+                            <img src="./static/img/profile-pic.png" alt="">
+                            <div class="job-name">
+                                <p class="job">Médico Clinico</p>
+                                <p class="name">López Javier García</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="profile">
+                            <img src="./static/img/profile-pic.png" alt="">
+                            <div class="job-name">
+                                <p class="job">Ingeniero Electronico</p>
+                                <p class="name">Rodríguez Ana María</p>
+                            </div>
+
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="profile">
+                            <img src="./static/img/profile-pic.png" alt="">
+                            <div class="job-name">
+                                <p class="job">Abogado</p>
+                                <p class="name">Martínez Juan Carlos</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="profile">
+                            <img src="./static/img/profile-pic.png" alt="">
+                            <div class="job-name">
+                                <p class="job">Profesor Literatura</p>
+                                <p class="name">Pérez María José</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="profile">
+                            <img src="./static/img/profile-pic.png" alt="">
+                            <div class="job-name">
+                                <p class="job">Diseñador Grafico</p>
+                                <p class="name">Fernández Alejandro</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </main>
 
 
 
 
 
-    <footer class="text-centered">
-        <div class="rights">
-            <h6>Todos los derechos reservados | Diseñado por El trio maravilla - 2024</h6>
-        </div>
-        <div class="footer-link">
-            <a href="template/soporte.html">Soporte</a>
-        </div>
-    </footer>
+        <footer class="text-centered">
+            <div class="rights">
+                <h6>Todos los derechos reservados | Diseñado por El trio maravilla - 2024</h6>
+            </div>
+            <div class="footer-link">
+                <a href="template/soporte.html">Soporte</a>
+            </div>
+        </footer>
+    </div>
 </body>
 
 </html>

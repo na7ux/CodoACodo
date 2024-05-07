@@ -88,6 +88,24 @@ h2{
     transition: .5s;
 }
 
+.buttons input[type=text], input[type=tel], input[type=email],
+    input[type=password], textarea{
+    font-size: 3vw;
+    background-color: var(--white);
+    border: none;
+    border: 1px solid var(--grey);
+    border-bottom: 2px solid var(--black);
+    padding: 4px 2px;
+    margin: 4px 0;
+    box-sizing: border-box;
+    resize: none;
+}
+
+.buttons input[type=text]:focus, input[type=tel]:focus, input[type=email]:focus,
+    input[type=email]:focus, textarea:focus{
+    border: 5px solid var(--darkBrown);
+}
+
 .fields label{
     font-size: 3.5vw;
 }
@@ -153,9 +171,9 @@ h2{
     display: grid;
     height: 100%;
     grid-template-columns: 1fr;
-    grid-template-rows: 0.5fr 0.75fr 1.5fr 1fr 0.5fr;
     grid-template-areas: 
     "header"
+    "nav"
     "banner"
     "main"
     "sidebar"
@@ -305,6 +323,7 @@ li a:hover{
 main{
     background-color: var(--white);
     grid-area: main;
+    height: 100%;
     padding: 20px;
 }
 
@@ -312,11 +331,109 @@ main{
 .sidebar{
     background-color: var(--darkBrown);
     grid-area: sidebar;
+    padding: 20px;
+    height: 100%;
+}
+
+.sidebar h3{
+    color: var(--white);
+    text-shadow: 4px 2px 2px var(--black);
+    font-size: 2vw;
+}
+
+.job-name{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+.job{
+    font-size: 2.5vw;
+    font-weight: bolder;
+}
+
+.name{
+    font-size: 2vw;
+}
+
+.profile{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    padding: 5px 10px;
+    border: 1px dashed var(--white);
+    cursor: pointer;
+}
+
+.profile img{
+    width:10%;
+    height: 10%;
+    border: 1px solid var(--white);
+}
+
+.profile p{
+    color: var(--white);
+    margin: 1px;
+    text-transform: uppercase
+}
+
+
+.profile:hover{
+    color: var(--black);
+    background-color: var(--black);
+    padding: 5px;
+}
+
+.result-job-name{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+.result-job{
+    font-size: 3.5vw;
+    font-weight: bolder;
+}
+
+.result-name{
+    font-size: 3vw;
+}
+
+.result-profile{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    padding: 5px 10px;
+    border: 1px dashed var(--black);
+    cursor: pointer;
+}
+
+.result-profile img{
+    width:10%;
+    height: 10%;
+    border: 1px solid var(--white);
+}
+
+.result-profile p{
+    color: var(--black);
+    margin: 1px;
+    text-transform: uppercase
+}
+
+
+/*||BANNER*/
+.banner{
+    grid-area: banner;
+    display: block;
+    height: 100%;
+}
+
+.banner img{
+    width: 100%;
+    height: 100%;
 }
 
 /*FOOTER*/
 footer{
-    background-color: var(--darkBrown);
+    background-color: var(--black);
     grid-area: footer;
     display: flex;
     flex-direction: column;
@@ -366,6 +483,7 @@ footer{
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-areas: 
         "header header header"
+        "nav nav nav"
         "banner banner banner"
         "main main sidebar"
         "footer footer footer";
@@ -394,6 +512,29 @@ footer{
     .hamb{
         display: none;
     }
+
+    .result-profile img{
+        width:5%;
+        height: 5%;
+    }
+    
+    .result-job{
+        font-size: 2vw;
+    }
+
+    .result-name{
+        font-size: 1.5vw;
+    }
+
+
+    .job{
+        font-size: 0.8vw;
+        font-weight: bolder;
+    }
+    
+    .name{
+        font-size: 0.5vw;
+    }
 }
 
 /* Para desktop*/
@@ -419,6 +560,7 @@ footer{
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-areas: 
         "header header header header"
+        "nav nav nav nav"
         "banner banner banner banner"
         "main main main sidebar"
         "footer footer footer footer";
