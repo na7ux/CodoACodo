@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="#">
     <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/camilo.css">
     <title>Experencia</title>
 </head>
 
@@ -43,67 +44,67 @@
             </nav>       
         </div>         
         <!--    Contenido Principal -->
-        <main class="experencia">
-            <h1>Experencia Laboral</h1>
-
-            <div class="contenedor_tarjetas">
-                <div class="tarjeta">
-                    <form id="form_exp_1">
-                        <label for="empresa1">Empresa</label>
-                        <input type="text" id="empresa1" name="empresa1" placeholder="Webfolio Creations" required>
-
-                        <label for="inicio1">Años</label>
-                        <div class="anios">
-                            <input type="number" id="inicio1" name="inicio1" placeholder="Año de inicio" min="1900"
-                                max="2099" required>
-                            <input type="number" id="fin1" name="fin1" placeholder="Año de fin" min="1900" max="2099"
-                                required>
+        <main class="experiencia-laboral">
+            <h1>Experiencia Laboral</h1>
+                
+            <div class="abrir_modal">
+                <button id="boton_modal">Agregar Experiencia Laboral</button>
+            </div>
+        
+            <!-- Contenedor de experiencias laborales -->
+            <div class="contenedor_tarjetas">    
+                <!-- Tarjeta de ejemplo --> 
+                <div class="tarjeta_experiencia_ejemplo">
+                    <div class="contenido_experiencia">
+                        <h3 class="titulo_experiencia">Ejemplo: Desarrollador Web</h3>
+                        <p class="nombre_empresa">Nombre de la empresa</p>
+                        <p class="duracion_experiencia">X años</p>
+                        <p class="descripcion_experiencia">Descripción de la experiencia laboral...</p>                            
+                    </div>
+                </div>
+            </div>
+        
+           <!-- Modal Box para agregar experiencias laborales -->
+           <div  id="mi_modal" class="modal">
+               <!-- Contenido del Modal -->   
+               <div id="modal_experiencia" class="contenido-modal"> 
+                    <div class="modal-header">
+                       <span class="close">&times;</span>
+                       <h2 id="titulo-encabezado-modal">Experiencia Laboral</h2>
+                    </div>
+        
+                    <div class="modal-body">
+                        <div class="contenedor_tarjetas">
+                            <div class="tarjeta">
+        
+                               <!-- Formulario para agregar experiencias laborales -->
+                               <form id="form_experiencia">
+                                    <label for="titulo_experiencia">Título</label>
+                                    <input type="text" id="titulo_experiencia" name="titulo_experiencia" placeholder="Título de la experiencia" required>
+        
+                                    <label for="nombre_empresa">Nombre de la Empresa</label>
+                                    <input type="text" id="nombre_empresa" name="nombre_empresa" placeholder="Nombre de la empresa" required>
+        
+                                    <label for="duracion_experiencia">Años de Experiencia</label>
+                                    <input type="number" id="duracion_experiencia" name="duracion_experiencia" placeholder="Años de experiencia" required>
+        
+                                    <label for="descripcion_experiencia">Descripción</label>
+                                    <textarea id="descripcion_experiencia" name="descripcion_experiencia" placeholder="Describe tu experiencia laboral..." rows="2" required></textarea>
+     
+                                <button type="submit">Agregar Experiencia Laboral</button>
+                             </form>
+                            </div>
                         </div>
-
-                        <label for="cargo1">Cargo</label>
-                        <input type="text" id="cargo1" class="cargo" name="cargo1" placeholder="Jefe en Ciberseguridad">
-
-                        <label for="mas_info1">Cuentame más...</label>
-                        <textarea id="mas_info1" class="cuentame_mas" name="mas_info1"
-                            placeholder="Describe tus responsabilidades..." rows="1"></textarea>
-
-                        <button type="submit">Agregar</button>
-                    </form>
+                    </div>
+        
+                    <div class="modal-footer">
+                       <h5 id="texto-pie-modal">Todos los derechos reservados| Diseñado por Na7ux, Darkatos y Sacashhh| 2024
+                       </h5>
+                    </div>
                 </div>
-
-                <div class="tarjeta">
-                    <form id="form_exp_2">
-                        <label for="empresa2">Empresa</label>
-                        <input type="text" id="empresa2" name="empresa2" placeholder="Webfolio Creations" required>
-
-                        <label for="inicio2">Años</label>
-                        <div class="anios">
-                            <input type="number" id="inicio2" name="inicio2" placeholder="Año de inicio" min="1900"
-                                max="2099" required>
-                            <input type="number" id="fin2" name="fin2" placeholder="Año de fin" min="1900" max="2099"
-                                required>
-                        </div>
-
-                        <label for="cargo2">Cargo</label>
-                        <input type="text" id="cargo2" class="cargo" name="cargo2" placeholder="Jefe en Ciberseguridad">
-
-                        <label for="mas_info2">Cuentame más...</label>
-                        <textarea id="mas_info2" class="cuentame_mas" name="mas_info2"
-                            placeholder="Describe tus responsabilidades..." rows="1"></textarea>
-
-                        <button type="submit">Agregar</button>
-                    </form>
-                </div>
-
-
-                <div class="boton_agregar_tarjeta">
-                    <button id="agregar_tarjeta">Añadir Tarjeta</button>
-                </div>
-
-
             </div>
         </main>
-
+        
         <!--    Pie de Pagina   -->
         <footer class="text-centered">
             <div class="rights">
@@ -113,8 +114,8 @@
                 <a href="./soporte.html">Soporte</a>
             </div>
         </footer>
-
     </div>
+    <script src="../static/js/experencia.js"></script>
 </body>
 
 </html>

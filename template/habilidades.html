@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/css/camilo.css">
+    <link rel="stylesheet" href="../static/css/camilo.css">
     <link rel="stylesheet" href="../static/css/style.css">
     <title>WebfolioCreations</title>
 </head>
@@ -35,36 +35,62 @@
                     <li><a href="./contacto.html">Contacto</a></li>
                 </ul>
             </nav>       
-        </div>       
-        <!-- Contenido principal -->
+        </div>
 
+        <!-- Contenido principal -->
         <main class="habilidades">
             <h1>Habilidades</h1>
-
-            <div class="contenedor_tarjetas">
-                <div class="tarjeta">
-
-                    <form id="form_habilidad_1">
-                        <label for="tecnologia1">Tecnología</label>
-                        <input type="text" id="tecnologia1" name="tecnologia1" placeholder="HTML, CSS, JavaScript, etc."
-                            required>
-
-                        <label for="descripcion_habilidad1">Descripción</label>
-                        <textarea id="descripcion_habilidad1" name="descripcion_habilidad1"
-                            placeholder="Describe cómo aprendiste esta tecnología y tu experiencia con ella..." rows="4"
-                            required></textarea>
-
-                        <button type="submit">Agregar</button>
-                    </form>
-
+                
+            <div class="abrir_modal">
+                <button id="boton_modal">Agregar Habilidad</button>
+            </div>
+        
+            <!-- Contenedor de habilidades subidas por el usuario -->
+           <div class="contenedor_tarjetas">
+                <!-- Tarjeta de ejemplo --> 
+                <div class="tarjeta_habilidad_ejemplo">
+                    <div class="contenido_habilidad">
+                        <h3 class="tecnologia" placeholder="HTML">Ejemplo: HTML</h3>
+                        <p class="descripcion_habilidad">HTML es como mi lienzo digital. Desde que comencé en la programación web, ha sido mi herramienta principal para dar forma a mis ideas en la pantalla. Es sorprendente cómo unas pocas etiquetas pueden transformar un documento en una experiencia interactiva y visualmente atractiva. Cada vez que escribo HTML, siento que estoy construyendo algo tangible en el mundo digital, y eso es una sensación increíble.</p>
+                    </div>
                 </div>
+           </div> 
+           
+           <!-- Modal Box para agregar habilidades -->
+           <div id="mi_modal" class="modal">
+               <!-- Contenido del Modal -->   
+               <div id="modal_habilidad" class="contenido-modal"> 
+                    <div class="modal-header">
+                       <span class="close">&times;</span>
+                       <h2 id="titulo-encabezado-modal">Habilidad</h2>
+                    </div>
+   
+                    <div class="modal-body">
+                        <div class="contenedor_tarjetas">
+                            <div class="tarjeta">
 
-                <div class="boton_agregar_tarjeta">
-                    <button id="agregar_tarjeta">Agregar Tarjeta</button>
+                               <!-- Formulario para agregar habilidades -->
+                                <form id="form_habilidad">
+                                   <label for="tecnologia">Tecnología</label>
+                                   <input type="text" id="tecnologia" name="tecnologia" placeholder="HTML, CSS, JavaScript, etc." required>
+           
+                                   <label for="descripcion_habilidad">Descripción</label>
+                                   <textarea id="descripcion_habilidad" name="descripcion_habilidad" placeholder="Describe cómo aprendiste esta tecnología y tu experiencia con ella..." rows="4" required></textarea>
+           
+                                   <button type="submit">Agregar Habilidad</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+   
+                    <div class="modal-footer">
+                       <h5 id="texto-pie-modal">Todos los derechos reservados| Diseñado por Na7ux, Darkatos y Sacashhh| 2024
+                       </h5>
+                    </div>
                 </div>
             </div>
         </main>
-
+                
 
         <!-- Pie de pagina -->
         <footer class="text-centered">
@@ -76,6 +102,7 @@
             </div>
         </footer>
     </div>
+    <script src="../static/js/habilidades.js"></script>
 </body>
 
 </html>
