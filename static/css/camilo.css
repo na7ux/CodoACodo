@@ -1,7 +1,4 @@
-
-
-/* variables de color */
-
+/* Variables de color */
 :root {
   --white: rgb(255, 255, 255); /* Blanco */
   --light-gray: rgb(213, 231, 240); /* Gris claro */
@@ -9,24 +6,22 @@
   --dark-blue: rgb(24, 45, 73); /* Azul oscuro */
   --black: rgb(0, 0, 0); /* Negro */
   --blue: rgb(0, 122, 255); /* Azul */
-  
 }
 
-*{
+/* Estilos generales */
+* {
   text-decoration: none;
 }
 
-/* Genericos  */
-
-.contenedor_tarjetas{
+/* Estilos para tarjetas (general) */
+.contenedor_tarjetas {
   width: 100%;
-  max-width: 1200%;
   height: 500px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  margin: auto;
-  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
 }
 
 .tarjeta {
@@ -34,22 +29,22 @@
   width: 300px;
   border-radius: 10px;
   padding: 15px; /* Espaciado interno */
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
   position: relative;
   flex-direction: column;
   background-color: var(--light-gray);
   box-shadow: 0 4px 8px var(--black); /* Sombra */
 }
 
-.tarjeta label{
+.tarjeta label {
   color: var(--black); /* Color del texto */
   margin-bottom: 5px; /* Espaciado inferior */
-  display: block; 
+  display: block;
   text-decoration: none;
   text-align: left;
 }
 
-.tarjeta input{
+.tarjeta input {
   margin-bottom: 15px; /* Espaciado inferior */
   padding: 8px;
   border: 1px solid var(--black);
@@ -57,101 +52,263 @@
   width: 280px;
 }
 
-.tarjeta button{ 
-  left: 50%; 
-  bottom: 10px;
-  position: absolute;
-  transform: translateX(-50%); /* Esto sirve para centrarlo */
-  background-color: var(--grayish-blue);
-  color: var(--black);
+.tarjeta textarea {
+  height: 100px;
+  width: 280px;
+  padding: 8px;
+  border: 1px solid var(--black);
+  border-radius: 5px;
+  resize: none;
 }
 
-.boton_agregar_tarjeta button {
+.tarjeta button {
+  left: 50%;
+  bottom: 10px;
+  position: absolute;
+  transform: translateX(-50%);
+  background-color: var(--grayish-blue);
+  color: var(--black);
+  transition: bakground-color 0.3s ease;
+  cursor: pointer;
+}
+
+#subir_proyecto {
+  background-color: var(--white);
+}
+
+/*    PROYECTOS     */
+/* Estilos para las tarjetas de Proyectos */
+.proyectos h1 {
+  color: var(--black);
+  font-size: 35px;
+  text-align: left;
+  margin-left: 35px;
+  box-decoration-break: unset;
+}
+
+.proyectos .tarjeta textarea {
+  height: 160px;
+  width: 280px;
+  padding: 8px;
+  border: 1px solid var(--black);
+  border-radius: 5px;
+  resize: none;
+}
+
+/* Tarjetas Contenedor Proyectos */
+.tarjeta_proyecto_ejemplo,
+.tarjeta_proyecto_subido {
+  background-color: var(--light-gray);
+  box-shadow: 0 4px 8px var(--black);
+  border-radius: 10px;
+  padding: auto;
+  margin-bottom: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 300px;
+  top: 10px;
+}
+
+.tarjeta_proyecto_ejemplo .contenido_proyecto,
+.tarjeta_proyecto_subido .contenido_proyecto {
+  padding: 10px;
+}
+
+.tarjeta_proyecto_ejemplo .imagen_proyecto,
+.tarjeta_proyecto_subido .imagen_proyecto {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.tarjeta_proyecto_ejemplo .imagen_proyecto img,
+.tarjeta_proyecto_subido .imagen_proyecto img {
+  width: 100%;
+  max-height: 150px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.tarjeta_proyecto_ejemplo .descripcion_proyecto,
+.tarjeta_proyecto_subido .descripcion_proyecto {
+  max-height: 80px;
+  overflow: hidden;
+}
+
+/*    HABILIDADES     */
+/* Estilos para las tarjetas de Habilidades */
+.habilidades .tarjeta_habilidad_ejemplo,
+.habilidades .tarjeta_habilidad_subida {
+  background-color: var(--light-gray);
+  box-shadow: 0 4px 8px var(--black);
+  border-radius: 10px;
+  padding: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 350px;
+}
+
+.habilidades .tarjeta_habilidad_ejemplo .contenido_habilidad,
+.habilidades .tarjeta_habilidad_subida .contenido_habilidad {
+  padding: 10px;
+  margin-top: 0;
+}
+
+.habilidades .tarjeta_habilidad_ejemplo .tecnologia,
+.habilidades .tarjeta_habilidad_subida .tecnologia {
+  font-size: 20px;
+  font-weight: bold;
+  
+}
+
+.habilidades .tarjeta_habilidad_ejemplo .descripcion_habilidad,
+.habilidades .tarjeta_habilidad_subida .descripcion_habilidad {
+  line-height: 1.5;
+}
+
+
+/*    Experencia Laboral     */
+/* Estilos para las tarjetas de Experiencia Laboral */
+.experiencia-laboral .tarjeta_experiencia_ejemplo,
+.experiencia-laboral .tarjeta_experiencia_subida {
+  background-color: var(--light-gray);
+  box-shadow: 0 4px 8px var(--black);
+  border-radius: 10px;
+  padding: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 350px;
+}
+
+.experiencia-laboral .tarjeta_experiencia_ejemplo .contenido_experiencia,
+.experiencia-laboral .tarjeta_experiencia_subida .contenido_experiencia {
+  padding: 10px;
+  margin-top: 0;
+}
+
+.experiencia-laboral .tarjeta_experiencia_ejemplo .titulo_experiencia,
+.experiencia-laboral .tarjeta_experiencia_subida .titulo_experiencia {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.experiencia-laboral .tarjeta_experiencia_ejemplo .nombre_empresa,
+.experiencia-laboral .tarjeta_experiencia_subida .nombre_empresa {
+  font-style: italic;
+}
+
+.experiencia-laboral .tarjeta_experiencia_ejemplo .duracion_experiencia,
+.experiencia-laboral .tarjeta_experiencia_subida .duracion_experiencia {
+  font-style: italic;
+}
+
+.experiencia-laboral .tarjeta_experiencia_ejemplo .descripcion_experiencia,
+.experiencia-laboral .tarjeta_experiencia_subida .descripcion_experiencia {
+  line-height: 1.5;
+}
+
+
+/*    MODAL BOX   */
+/* Boton para abrir Modal */
+.abrir_modal button {
   padding: 8px 12px;
-  font-size: 15px; 
+  margin-left: 35px;
+  font-size: 15px;
   background-color: var(--light-gray);
   color: var(--black);
   border: none;
   border-radius: 5px;
   box-shadow: 0 4px 8px var(--black); /* Sombra */
   transition: background-color 0.3s ease;
+  cursor: pointer;
 }
 
-
-#agregar_tarjeta:hover {
-  background-color: var(--blue); /* Color de fondo al pasar el mouse */
+/* Estilos para el Modal */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
-
-
-/* Estilos para las tarjetas de Experiencia Laboral */
-
-.experencia h1{
-  color: var(--black);
-  font-size: 35px;
-  text-align: left;
-  margin-left: 35px;
-  box-decoration-break: unset;
+.contenido-modal {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
 }
 
-.tarjeta .anios {
-  display: flex;
+/* Animacion */
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+
+  to {
+    top: 0;
+    opacity: 1;
+  }
 }
 
-.tarjeta .anios input{
-  flex: 1; /* El input ocupará todo el espacio disponible */
-  margin-right: 10px; /* Espacio entre los inputs */
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+
+  to {
+    top: 0;
+    opacity: 1;
+  }
 }
 
-.tarjeta textarea.cuentame_mas {
-  width: 280px;
-  height: 100px;
-  padding: 8px;
-  border: 1px solid var(--black);
-  border-radius: 5px;
-  resize: none; /* Evita que el usuario pueda redimensionar el textarea */
+/* Boton de cerrar */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
 }
 
-.tarjeta textarea.cuentame_mas::placeholder {
-  color: var(--black); /* Color del placeholder */
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-
-/* Estilos para las tarjetas de  Habilidades */
-
-.habilidades h1{
-  color: var(--black);
-  font-size: 35px;
-  text-align: left;
-  margin-left: 35px;
-  box-decoration-break: unset;
+.modal-header {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
 }
 
-.habilidades .tarjeta textarea{
-  height: 200px; 
-  width: 280px;
-  padding: 8px;
-  border: 1px solid var(--black);
-  border-radius: 5px;
-  resize: none;
+.modal-body {
+  padding: 2px 16px;
 }
 
-
-/* Estilos para las tarjetas de Proyectos */
-
-.proyectos h1{
-  color: var(--black);
-  font-size: 35px;
-  text-align: left;
-  margin-left: 35px;
-  box-decoration-break: unset;
-}
-
-.proyectos .tarjeta textarea{
-  height: 160px; 
-  width: 280px;
-  padding: 8px;
-  border: 1px solid var(--black);
-  border-radius: 5px;
-  resize: none;
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
 }
