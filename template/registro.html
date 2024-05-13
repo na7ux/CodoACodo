@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../static/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../static/css/prueba.css">
     <title>Registro</title>
 </head>
 
@@ -39,12 +41,102 @@
                 <h2>Registro</h2>
 
                 <!-- Pedir datos al usuario -->
-                <form action="#">
+                <form action="" class="formulario" id="formulario">
+
                     <div class="form text-centered">
-                        <div class="fields">
-                            <label for="nombre">Nombre: </label>
-                            <input type="text" id="nombre" name="nombre" required>
+                        <!--Grupo Nombre-->
+                        <div class="formulario__grupo" id="grupo__nombre">
+                            <label for="nombre" class="formulario__label">Nombre: </label>
+                            <div class="formulario__grupo-input">
+                                <input type="text" class="formulario__input" name="nombre" id="nombre"
+                                    placeholder="john123">
+                                <i class="formulario__validacion-estado fa-solid fa-circle-xmark"> </i>
+                            </div>
+                            <p class="formulario__input-error">El Nombre tiene que ser de 3 a 30 digitos y solo puede
+                                contener letras</p>
                         </div>
+                        <!--Grupo Apellido-->
+                        <div class="formulario__grupo" id="grupo__apellido">
+                            <label for="apellido" class="formulario__label">Apellido: </label>
+                            <div class="formulario__grupo-input">
+                                <input type="text" class="formulario__input" name="apellido" id="apellido"
+                                    placeholder="Smith">
+                                <i class="formulario__validacion-estado fa-solid fa-circle-xmark"> </i>
+                            </div>
+                            <p class="formulario__input-error">El Apellido tiene que ser de 3 a 30 digitos y solo puede
+                                contener letras</p>
+                        </div>
+                        <!--Grupo Email-->
+                        <div class="formulario__grupo" id="grupo__email">
+                            <label for="email" class="formulario__label">Email: </label>
+                            <div class="formulario__grupo-input">
+                                <input type="email" class="formulario__input" name="email" id="email"
+                                    placeholder="Webfolio@Creations.com">
+                                <i class="formulario__validacion-estado fa-solid fa-circle-xmark"> </i>
+                            </div>
+                            <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos,
+                                guiones y guiones bajos</p>
+                        </div>
+                        <!--Grupo Telefono-->
+                        <div class="formulario__grupo" id="grupo__telefono">
+                            <label for="telefono" class="formulario__label">Telefono: </label>
+                            <div class="formulario__grupo-input">
+                                <input type="text" class="formulario__input" name="telefono" id="telefono"
+                                    placeholder="3884813587">
+                                <i class="formulario__validacion-estado fa-solid fa-circle-xmark"> </i>
+                            </div>
+                            <p class="formulario__input-error">El telefono solo puede contener nuemros y el maximo son
+                                14 digitos</p>
+                        </div>
+                        <!--Grupo Usuario-->
+                        <div class="formulario__grupo" id="grupo__usuario">
+                            <label for="usuario" class="formulario__label">Usuario: </label>
+                            <div class="formulario__grupo-input">
+                                <input type="text" class="formulario__input" name="usuario" id="usuario"
+                                    placeholder="Usuario">
+                                <i class="formulario__validacion-estado fa-solid fa-circle-xmark"> </i>
+                            </div>
+                            <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 digitos y solo puede
+                                contener numeros, letras y guiones bajos</p>
+                        </div>
+                        <!--Grupo Contraseña-->
+                        <div class="formulario__grupo" id="grupo__password">
+                            <label for="password" class="formulario__label">password: </label>
+                            <div class="formulario__grupo-input">
+                                <input type="password" class="formulario__input" name="password" id="password">
+                                <i class="formulario__validacion-estado fa-solid fa-circle-xmark"> </i>
+                            </div>
+                            <p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 digitos</p>
+                        </div>
+
+                        <!--Grupo Contraseña2-->
+                        <div class="formulario__grupo" id="grupo__password2">
+                            <label for="password2" class="formulario__label">Repetir Contraseña: </label>
+                            <div class="formulario__grupo-input">
+                                <input type="password" class="formulario__input" name="password2" id="password2">
+                                <i class="formulario__validacion-estado fa-solid fa-circle-xmark"> </i>
+                            </div>
+                            <p class="formulario__input-error">Abmas contraseñas tienen que ser iguales</p>
+                        </div>
+                        <!--Grupo: terminos y condiciones-->
+                        <div class="formulario__grupo" id="grupo__terminos">
+                            <label class="formulario__label">
+                                <input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
+                                Acpeto los Terminos y Condiciones
+                            </label>
+                        </div>
+                        <div class="formulario__mensaje" id="formulario__mensaje">
+                            <p><i class="fa-solid fa-triangle-exclamation"></i><b>Error</b> Por favor rellene el
+                                formulario correctamente</p>
+                        </div>
+                        <div class="formulario__grupo formulario__grupo-btn-enviar">
+                            <button type="submit" class="formulario__btn">Enviar</button>
+                            <button type="submit" class="formulario__btn">Cancelar</button>
+
+                            <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">El formulario se envio
+                                exitosamente</p>
+                        </div>
+                        <!--
                         <div class="fields">
                             <label for="apellido">Apellido: </label>
                             <input type="text" id="apellido" name="apellido" required>
@@ -65,18 +157,23 @@
                             <label for="contrasena">Contraseña: </label>
                             <input type="password" name="contrasena" id="contrasena" required>
                         </div>
+
+                        <div class="buttons">
+                            <input type="submit" value="Guardar" onclick="location.href='./sobremi.html'"></input>
+                            <input type="button" value="Cancelar" onclick="location.href='../index.html'"></input>
+                        </div>
                         <div class="fields">
                             <label for="fotoperfil">Elija su foto de perfil</label>
                             <input type="file" name="fotoperfil" id="">
                             <input type="button" value="Guardar">
                             <img src="" alt="imagen_registro">
                         </div>
-                        <div class="buttons">
-                            <input type="submit" value="Guardar" onclick="location.href='./sobremi.html'"></input>
-                            <input type="button"  value="Cancelar" onclick="location.href='../index.html'"></input>
-                        </div>
+                        -->
+
+
+
                     </div>
-                </form>   
+                </form>
             </div>
         </main>
 
@@ -89,7 +186,7 @@
                 <a href="./soporte.html">Soporte</a>
             </div>
         </footer>
-
+        <script src="../static/js/js.js"></script>
 </body>
 
 </html>
