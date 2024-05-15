@@ -23,10 +23,10 @@ window.onclick = function(event) {
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Obtener el formulario de subida de proyecto
-var form_proyecto = document.getElementById("form_proyecto");
+var form_proyecto = document.getElementById("form_project");
 
 // Obtener el contenedor de proyectos
-var contenedor_proyectos = document.querySelector(".contenedor_tarjetas");
+var contenedor_proyectos = document.querySelector(".card_container");
 
 form_proyecto.addEventListener("submit", function(event) {
   event.preventDefault(); // Evitar que el formulario se envíe normalmente
@@ -39,14 +39,14 @@ form_proyecto.addEventListener("submit", function(event) {
 
   // Crear elementos HTML para representar el proyecto
   const tarjeta_proyecto = document.createElement("div");
-  tarjeta_proyecto.classList.add("tarjeta", "tarjeta_proyecto_subido");
+  tarjeta_proyecto.classList.add("card", "tarjeta_proyecto_subido");
 
   const titulo_element = document.createElement("h3");
   titulo_element.textContent = titulo;
-  titulo_element.classList.add("titulo_proyecto");
+  titulo_element.classList.add("card_title");
 
   const imagen_container = document.createElement("div");
-  imagen_container.classList.add("imagen_proyecto");
+  imagen_container.classList.add("project_img");
 
   const imagen_element = document.createElement("img");
   imagen_element.classList.add("imagen_previa");
@@ -56,7 +56,7 @@ form_proyecto.addEventListener("submit", function(event) {
 
   const descripcion_element = document.createElement("p");
   descripcion_element.textContent = descripcion;
-  descripcion_element.classList.add("descripcion_proyecto");
+  descripcion_element.classList.add("project_description");
   
   // Agregar elementos al contenedor de la tarjeta de proyecto
   tarjeta_proyecto.appendChild(titulo_element);
@@ -68,7 +68,7 @@ form_proyecto.addEventListener("submit", function(event) {
   contenedor_proyectos.appendChild(tarjeta_proyecto);
   
   // Eliminar el ejemplo si es el primer proyecto
-  var ejemplo_proyecto = document.querySelector(".tarjeta_proyecto_ejemplo");
+  var ejemplo_proyecto = document.querySelector(".show_project");
   if (ejemplo_proyecto) {
     ejemplo_proyecto.remove();
   }

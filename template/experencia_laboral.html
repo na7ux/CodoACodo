@@ -6,13 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="#">
     <link rel="stylesheet" href="../static/css/style.css">
-    <link rel="stylesheet" href="../static/css/camilo.css">
     <title>Experencia</title>
 </head>
 
 <body>
     <div class="container">
-        <!--    Arriba del Banner   -->
         <header>
             <img src="#" alt="logo">
             <h1>Webfolio Creations</h1>
@@ -45,17 +43,17 @@
         </div>         
         <!--    Contenido Principal -->
         <main class="experiencia-laboral">
-            <h1>Experiencia Laboral</h1>
+            <h2>Experiencia Laboral</h2>
                 
             <div class="abrir_modal">
                 <button id="boton_modal">Agregar Experiencia Laboral</button>
             </div>
         
             <!-- Contenedor de experiencias laborales -->
-            <div class="contenedor_tarjetas">    
+            <div class="card_container">    
                 <!-- Tarjeta de ejemplo --> 
-                <div class="tarjeta_experiencia_ejemplo">
-                    <div class="contenido_experiencia">
+                <div class="show_work">
+                    <div class="work_content">
                         <h3 class="titulo_experiencia">Ejemplo: Desarrollador Web</h3>
                         <p class="nombre_empresa">Nombre de la empresa</p>
                         <p class="duracion_experiencia">X años</p>
@@ -70,12 +68,12 @@
                <div id="modal_experiencia" class="contenido-modal"> 
                     <div class="modal-header">
                        <span class="close">&times;</span>
-                       <h2 id="titulo-encabezado-modal">Experiencia Laboral</h2>
+                       <h3 id="titulo-encabezado-modal">Experiencia Laboral</h3>
                     </div>
         
                     <div class="modal-body">
-                        <div class="contenedor_tarjetas">
-                            <div class="tarjeta">
+                        <div class="card_container">
+                            <div class="card">
         
                                <!-- Formulario para agregar experiencias laborales -->
                                <form id="form_experiencia">
@@ -91,7 +89,7 @@
                                     <label for="descripcion_experiencia">Descripción</label>
                                     <textarea id="descripcion_experiencia" name="descripcion_experiencia" placeholder="Describe tu experiencia laboral..." rows="2" required></textarea>
      
-                                <button type="submit">Agregar Experiencia Laboral</button>
+                                <button type="submit" class="button">Agregar Experiencia Laboral</button>
                              </form>
                             </div>
                         </div>
