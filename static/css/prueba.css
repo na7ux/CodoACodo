@@ -49,7 +49,7 @@
 }
 
 .input-error-active{
-    display: flex;
+    display: block;
     
 }
 
