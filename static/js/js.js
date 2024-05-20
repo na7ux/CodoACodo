@@ -12,17 +12,18 @@ const expresiones = {
 
 
 const campos={
-    usuario: false,
-    nombre: false,
-    apellido: false,
+    user: false,
+    name: false,
+    surname: false, 
     email: false,
-    telefono: false,
+    phone: false,
     password: false,
    }
 
 const validarFormulario=(e)=>{
     switch (e.target.name){
         case "user":
+            
            validarCampo(expresiones.usuario,e.target,e.target.name);
         break;
         case "name":
@@ -52,21 +53,25 @@ const validarFormulario=(e)=>{
 const validarCampo=(expresion, input, campo)=>{
     
     if(expresion.test(input.value)){
-        document.getElementById(`group__${campo}`).classList.remove('groupo-incorrect');
+        document.getElementById(`group__${campo}`).classList.remove('group-incorrect');
         document.getElementById(`group__${campo}`).classList.add('group-correct');
         document.querySelector(`#group__${campo} i`).classList.add('fa-check');
         document.querySelector(`#group__${campo} i`).classList.remove('fa-circle-xmark'); 
-        document.querySelector(`#group__${campo} .input-error`).classList.remove('input-error-active');
+
+        document.querySelector(`#group__${campo} .input-error`).classList.remove('.input-error-active');
         campos[campo]=true;
+       
+
     }else{
 
         document.getElementById(`group__${campo}`).classList.add('group-incorrect');
         document.getElementById(`group__${campo}`).classList.remove('group-correct');
         document.querySelector(`#group__${campo} i`).classList.add('fa-circle-xmark');
         document.querySelector(`#group__${campo} i`).classList.remove('fa-check');
-        document.querySelector(`#group__${campo} .input-error`).classList.add('input-error-active');
-        campos[campo]=false;
-        
+
+        document.querySelector(`#group__${campo} .input-error`).classList.add('.input-error-active');
+        campos[campo]=false;                                                    
+       
     }
 }
 
@@ -78,11 +83,12 @@ const validarPassword2 =()=>{
         document.getElementById(`group__password2`).classList.remove('group-correct');
         document.querySelector(`#group__password2 i`).classList.add('fa-circle-xmark');
         document.querySelector(`#group__password2 i`).classList.remove('fa-check');
+
         document.querySelector(`#group__password2 .input-error`).classList.add('input-error-active');
         campos['password']=false;
     }else{
-        document.getElementById(`group__password2`).classList.remove('formulario__grupo-incorrecto');
-        document.getElementById(`group__password2`).classList.add('formulario__grupo-correcto');
+        document.getElementById(`group__password2`).classList.remove('group-incorrect');
+        document.getElementById(`group__password2`).classList.add('group-correct');
         document.querySelector(`#group__password2 i`).classList.remove('fa-circle-xmark');
         document.querySelector(`#group__password2 i`).classList.add('fa-check');
         document.querySelector(`#group__password2 .input-error`).classList.remove('input-error-active');
@@ -99,19 +105,23 @@ formulario.addEventListener('submit', (e)=>{
     e.preventDefault();
 
     // const terminos = document.getElementById('terminos'); ya no hay terminos
-	if(campos.usuario && campos.apellido && campos.nombre && campos.email && campos.telefono && campos.password ){
+    console.log(campos.user , campos.surname , campos.name , campos.email ,campos.phone , campos.password)
+	if(campos.user && campos.surname && campos.name && campos.email && campos.phone && campos.password ){
 		formulario.reset();
-
+        document.getElementById('form__message').classList.remove('message-active');
 		document.getElementById('success').classList.add('success-active');
 		setTimeout(() => {
 			document.getElementById('success').classList.remove('success-active');
+            formulario.reset();
+        
 		}, 7000);
 
 		document.querySelectorAll('.groupo-correct').forEach((icono) => {
 			icono.classList.remove('group-correct');
 		});
 	} else {
-		document.getElementById('form__message').classList.add('formulario__mensaje-activo');
+		document.getElementById('form__message').classList.add('message-active');
+        
 	}
 }
 )
