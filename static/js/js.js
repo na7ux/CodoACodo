@@ -58,7 +58,7 @@ const validarCampo=(expresion, input, campo)=>{
         document.querySelector(`#group__${campo} i`).classList.add('fa-check');
         document.querySelector(`#group__${campo} i`).classList.remove('fa-circle-xmark'); 
 
-        document.querySelector(`#group__${campo} .input-error`).classList.remove('.input-error-active');
+        document.querySelector(`#group__${campo} .input-error`).classList.remove('input-error-active');
         campos[campo]=true;
        
 
@@ -69,7 +69,7 @@ const validarCampo=(expresion, input, campo)=>{
         document.querySelector(`#group__${campo} i`).classList.add('fa-circle-xmark');
         document.querySelector(`#group__${campo} i`).classList.remove('fa-check');
 
-        document.querySelector(`#group__${campo} .input-error`).classList.add('.input-error-active');
+        document.querySelector(`#group__${campo} .input-error`).classList.add('input-error-active');
         campos[campo]=false;                                                    
        
     }
