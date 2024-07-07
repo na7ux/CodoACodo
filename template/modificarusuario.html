@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../static/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Registro</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div id="logo">
+                <a href="../index.html">
+                    <img src="../static/img/logo-only-noBackground.png" alt="logo" id="logo-img">
+                </a>
+                <h1>Webfolio Creations</h1>
+            </div>
+            <div id="login">
+                <a href="./login.html">Iniciar Sesion</a>
+            </div>
+        </header>
+
+        <!--    Navegador  -->
+        <div class="navbar">
+            <input type="checkbox" name="check" id="check">
+            <label class="hamb" for="check"><span class="hamb-line"></span></label>
+            <nav class="nav">
+                <ul class="menu nobullets">
+                    <li><a href="../index.html">Inicio</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!--    Contenido Principal -->
+        <main>
+            <div class="section">
+                <h2>Modificar Datos</h2>
+
+                <!-- Pedir datos al usuario -->
+                <form class="form text-centered" id="form">
+
+                    <!--Grupo Nombre-->
+                    <div class="fields" id="group__name">
+                        <label for="name" class="form_label">Nombre: </label>
+                        <div class="group-input">
+                            <input type="text" class="input" name="name" id="name" placeholder="John">
+                            <i class="validation fa-solid fa-circle-xmark"> </i>
+                        </div>
+                        <p class="input-error">El Nombre tiene que ser de 3 a 30 digitos y solo puede
+                            contener letras</p>
+                    </div>
+                    <!--Grupo Apellido-->
+                    <div class="fields" id="group__surname">
+                        <label for="surname" class="form__label">Apellido: </label>
+                        <div class="group-input">
+                            <input type="text" class="input" name="surname" id="surname" placeholder="Smith">
+                            <i class="validation fa-solid fa-circle-xmark"> </i>
+                        </div>
+                        <p class="input-error">El Apellido tiene que ser de 3 a 30 digitos y solo puede
+                            contener letras</p>
+                    </div>
+                    <!--Grupo Email-->
+                    <div class="fields" id="group__email">
+                        <label for="email" class="form__label">Email: </label>
+                        <div class="group-input">
+                            <input type="email" class="input" name="email" id="email"
+                                placeholder="Webfolio@Creations.com">
+                            <i class="validation fa-solid fa-circle-xmark"> </i>
+                        </div>
+                        <p class="input-error">El correo solo puede contener letras, numeros, puntos,
+                            guiones y guiones bajos</p>
+                    </div>
+                    <!--Grupo Telefono-->
+                    <div class="fields" id="group__phone">
+                        <label for="phone" class="form__label">Telefono: </label>
+                        <div class="group-input">
+                            <input type="text" class="input" name="phone" id="phone" placeholder="3884813587">
+                            <i class="validation fa-solid fa-circle-xmark"> </i>
+                        </div>
+                        <p class="input-error">El telefono solo puede contener nuemros y el maximo son
+                            14 digitos</p>
+                    </div>
+                    <!--Grupo Usuario-->
+                    
+                        <div class="fields">
+                        <label for="profile_pic">Elija su foto de perfil</label>
+                        <input type="file" name="profile_pic" id="profile_pic">
+                        <input type="button" value="Guardar">
+                        <img src="#" alt="imagen_registro">
+                    </div>
+
+                    <div class="message" id="form__message">
+                        <p><i class="fa-solid fa-triangle-exclamation"></i><b> Error</b> Por favor rellene el
+                            formulario correctamente</p>
+                    </div>
+                    <div class="buttons formulario__grupo-btn-enviar">
+                        <button type="submit" class="button">Enviar</button>
+                        <button type="submit" class="button">Cancelar</button>
+
+                        <p class="success" id="success">El formulario se envio
+                            exitosamente</p>
+                    </div>
+                </form>
+
+                <div class="buttons">
+                    <button type="submit" class="button">ELIMINAR CUENTA</button>
+                </div>
+            </div>
+        </main>
+
+        <!--    Pie de Pagina   -->
+        <footer class="text-centered">
+            <div class="rights">
+                <h6>Todos los derechos reservados | Diseñado por NinjaCode | 2024</h6>
+            </div>
+            <div class="footer-link">
+                <a href="./soporte.html">Soporte</a>
+            </div>
+        </footer>
+        <script src="../static/js/js.js"></script>
+    </div>
+</body>
+
+</html>
