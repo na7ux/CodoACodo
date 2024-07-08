@@ -2,8 +2,7 @@ from app.database import get_db
 
 class User:
 
-    def __init__(self, id_userWebfolio=None, user_name=None, user_last_name=None, email=None, phone=None, user_usuario=None, user_password=None, image=None):
-        self.id_userWebfolio = id_userWebfolio
+    def __init__(self, user_name=None, user_last_name=None, email=None, phone=None, user_usuario=None, user_password=None, image=None):
         self.user_name = user_name
         self.user_last_name = user_last_name
         self.email = email
@@ -15,14 +14,14 @@ class User:
     def save(self):
         db = get_db()
         cursor = db.cursor()
-        if self.id_userWebfolio:
+        if self.user:
             cursor.execute("""
-                UPDATE movies SET user_name = %s, user_last_name = %s, email = %s, phone = %s, user_usuario = %s, user_password = %s, image = %s
-                WHERE id_movie = %s
+                UPDATE webfolio SET user_name = %s, user_last_name = %s, email = %s, phone = %s, user_usuario = %s, user_password = %s, image = %s
+                WHERE user = %s
             """, (self.user_name, self.user_last_name, self.email, self.phone, self.user_usuario, self.id_movie, self.user_password,  self.image))
         else:
             cursor.execute("""
-                INSERT INTO movies (user_name, user_last_name, email, phone, user_usuario, user_password, image) VALUES (%s, %s, %s, %s)
+                INSERT INTO webfolio (user_name, user_last_name, email, phone, user_usuario, user_password, image) VALUES (%s, %s, %s, %s)
             """, (self.user_name, self.user_last_name, self.email, self.phone, self.user_usuario, self.user_password,  self.image))
             self.id_movie = cursor.lastrowid
         db.commit()
@@ -32,17 +31,17 @@ class User:
     def get_all():
         db = get_db()
         cursor = db.cursor()
-        cursor.execute("SELECT * FROM movies")
+        cursor.execute("SELECT * FROM webfolio")
         rows = cursor.fetchall()
-        user = [User(id_userWebfolio=row[0], user_name=row[1], user_last_name=row[2], email=row[3], phone=row[4], user_usuario=row[5], user_password=row[6], image=row[7]) for row in rows]
+        user = [User(user_usuario=row[0], user_name=row[1], user_last_name=row[2], email=row[3], phone=row[4], , image=row[5]) for row in rows]
         cursor.close()
         return user
 
     @staticmethod
-    def get_by_id(id_user):
+    def get_by_id(user_usuario):
         db = get_db()
         cursor = db.cursor()
-        cursor.execute("SELECT * FROM userWebfolio WHERE id_userWebfolio = %s", (id_user,))
+        cursor.execute("SELECT * FROM Webfolio WHERE user_usuario = %s", (user_usuario))
         row = cursor.fetchone()
         cursor.close()
         if row:
@@ -53,13 +52,12 @@ class User:
     def delete(self):
         db = get_db()
         cursor = db.cursor()
-        cursor.execute("DELETE FROM movies WHERE id_movie = %s", (self.id_userWebfolio,))
+        cursor.execute("DELETE FROM webfolio WHERE iser_usuario = %s", (self.user_usuario))
         db.commit()
         cursor.close()
 
     def serialize(self):
         return {
-            'id_userWebfolio': self.id_userWebfolio, 
             'user_name': self.user_name, 
             'user_last_name':self.user_last_name, 
             'email':self.email,
