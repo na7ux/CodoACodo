@@ -1,8 +1,8 @@
-from flask import jsonify, request
+from flask import jsonify, request,render_template
 from app.models import User
 
-def index():
-    return jsonify({'message':'heenlo'})
+
+
 
 def create_user():
     data = request.json
@@ -15,7 +15,7 @@ def create_user():
         user_password=data['password'],
         image=data['image'])
     new_user.save()
-    return jsonify({'message': 'User created successfully'}), 201
+    return jsonify({'message': 'User created successfully'}),201
 
 def get_all_users():
     users = User.get_all()

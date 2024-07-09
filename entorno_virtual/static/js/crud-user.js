@@ -1,6 +1,5 @@
 class User{
-    constructor(id_userWebfolio,user_name,user_last_name,email,phone,user_usuario,user_password,image){
-        this.id_userWebfolio = id_userWebfolio
+    constructor(user_name,user_last_name,email,phone,user_usuario,user_password,image){
         this.user_name = user_name
         this.user_last_name = user_last_name
         this.email = email
@@ -23,7 +22,7 @@ class User{
         tbodyUsers.innerHTML = '';
         users.forEach(user => {
             //TEMPLATE STRING - TEMPLATE LITERAL 
-            const tr = `
+            /* const tr = `
                         <tr>
                             <td>${user.user}</td>
                             <td>${user.name}</td>
@@ -40,7 +39,7 @@ class User{
                             </td>
                         </tr>
             `;
-            tbodyUsers.insertAdjacentHTML('beforeend',tr);
+            tbodyUsers.insertAdjacentHTML('beforeend',tr); */
         });
     
     }

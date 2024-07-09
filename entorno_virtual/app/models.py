@@ -33,7 +33,7 @@ class User:
         cursor = db.cursor()
         cursor.execute("SELECT * FROM webfolio")
         rows = cursor.fetchall()
-        user = [User(user_usuario=row[0], user_name=row[1], user_last_name=row[2], email=row[3], phone=row[4], , image=row[5]) for row in rows]
+        user = [User(user_usuario=row[0], user_name=row[1], user_last_name=row[2], email=row[3], phone=row[4], image=row[5]) for row in rows]
         cursor.close()
         return user
 

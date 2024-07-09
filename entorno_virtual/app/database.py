@@ -1,17 +1,21 @@
 import os
 import mysql.connector
-from flask import g
+from flask import Flask, g , jsonify
 from dotenv import load_dotenv
 
 
+
 load_dotenv()
+
 DATABASE_CONFIG = {
- 'user': os.getenv('DB_USERNAME'), 
- 'password': os.getenv('DB_PASSWORD'),  
- 'host': os.getenv('DB_HOST'), 
+ 'user': os.getenv('DB_USERNAME'),
+ 'password': os.getenv('DB_PASSWORD'),
+ 'host': os.getenv('DB_HOST'),
  'database': os.getenv('DB_NAME'),
- 'port': os.getenv('DB_PORT', 3306) 
+ 'port': os.getenv('DB_PORT',3306)
 }
+
+
 # Función para obtener la conexión a la base de datos
 def get_db():
  # Si 'db' no está en el contexto global de Flask 'g'
@@ -20,6 +24,9 @@ def get_db():
     g.db = mysql.connector.connect(**DATABASE_CONFIG)
  # Retornar la conexión a la base de datos
    return g.db
+
+
+
 # Función para cerrar la conexión a la base de datos
 def close_db(e=None):
  # Extraer la conexión a la base de datos de 'g' y eliminarla

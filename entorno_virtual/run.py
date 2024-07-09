@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from flask_cors import CORS
 from app.database import init_app
 from app.views import *
@@ -16,9 +16,15 @@ CORS(app)
 # CORS(app, resources={r"/api/*": {"origins": "http://127.0.0.1:5000"}})
 
 # Rutas para el CRUD de la entidad Users
-app.route('/', methods=['GET'])(index)
-app.route('/api/users/', methods=['POST'])(create_user)
-app.route('/api/users/', methods=['GET'])(get_all_users)
+@app.route('/')
+def index():
+    return render_template('index.html')
+""" @app.route('/registro')
+def registro():
+    return render_template('registro.html') """
+
+app.route('/registro1', methods=['POST'])(create_user)
+app.route('/registro', methods=['GET'])(get_all_users)
 app.route('/api/users/<int:user_user>', methods=['GET'])(get_user)
 app.route('/api/users/<string:user_user>', methods=['PUT'])(update_user)
 app.route('/api/users/<int:user_user>', methods=['DELETE'])(delete_user)
