@@ -23,15 +23,21 @@ def index():
     return render_template('index.html')
 
 
-""" @app.route('/registro')
+@app.route('/usuario')
 def registro():
-    return render_template('registro.html') """
+    user_usuario = request.args.get('user_usuario')
+    if user_usuario:
+        return get_user(user_usuario)
+    else:
+        return render_template('registro.html')
+
 
 app.route('/registro', methods=['POST'])(create_user)
-app.route('/registro', methods=['GET'])(get_all_users)
-app.route('/api/users/<int:user_user>', methods=['GET'])(get_user)
-app.route('/api/users/<string:user_user>', methods=['PUT'])(update_user)
-app.route('/api/users/<int:user_user>', methods=['DELETE'])(delete_user)
+app.route('/usuarios', methods=['GET'])(get_all_users)
+
+app.route('/update/<string:user_usuario>', methods=['PUT'])(update_user)
+
+app.route('/delete/<string:user_usuario>', methods=['DELETE'])(delete_user)
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,118 +1,175 @@
-class User{
-    constructor(user_name,user_last_name,email,phone,user_usuario,user_password,image){
-        this.user_name = user_name
-        this.user_last_name = user_last_name
-        this.email = email
-        this.phone = phone
-        this.user_usuario = user_usuario
-        this.user_password = user_password
-        this.image = image
-        }
+document.addEventListener('DOMContentLoaded', () => {
+    showUsers();
+});
+class User {
+    constructor(user_name, user_last_name, email, phone, user_usuario, user_password, image) {
+        this.user_name = user_name;
+        this.user_last_name = user_last_name;
+        this.email = email;
+        this.phone = phone;
+        this.user_usuario = user_usuario;
+        this.user_password = user_password;
+        this.image = image;
     }
+}
 
-    function showUsers(){
-    
-        //BUSCAR LO QUE HAY EN LOCAL STORAGE
-        let users = JSON.parse(localStorage.getItem('users')) || [];
-    
-        //buscar elemento HTML donde quiero insertar las peliculas
-        const tbodyUsers = document.querySelector('#list-table-users tbody');
-        // const tbodyMovies = document.getElementById('#tbody-table-movies');
-        //limpio el contenido de la tabla
-        tbodyUsers.innerHTML = '';
-        users.forEach(user => {
-            //TEMPLATE STRING - TEMPLATE LITERAL 
-            /* const tr = `
-                        <tr>
-                            <td>${user.user}</td>
-                            <td>${user.name}</td>
-                            <td>${user.surname}</td>
-                            <td>${user.email}</td>
-                            <td>${user.phone}</td>
-                            
-                            <td>
-                                <img src="${user.profile_pic}" alt="${Imagen_de_perfil}" width="30%">
-                            </td>
-                            <td>
-                                <button class="button" onclick='updateUser(${user.user})'><i class="fa fa-pencil" ></button></i>
-                                <button class="button" onclick='deleteUser(${user.user})'><i class="fa fa-trash" ></button></i>
-                            </td>
-                        </tr>
-            `;
-            tbodyUsers.insertAdjacentHTML('beforeend',tr); */
-        });
-    
-    }
-    
-
-
-    function saveUser(){
-    
-        //Obtengo el elemento HTML del formulario
-        const form = document.querySelector('#form');
-    
-        //obtengo los inputs del formulario
-        const inputName = document.querySelector('#name');
-        const inputSurname = document.querySelector('#surname');
-        const inputEmail = document.querySelector('#email');
-        const inputPhone = document.querySelector('#phone');
-        const inputUser = document.querySelector('#user');
-        const inputPasword = document.querySelector('#pasword');
-        const inputprofile_pic = document.querySelector('#profile_pic');
-    
-        //Realizo una validación simple de acuerdo al contenido del value del input del titulo
-        if(inputName.value.trim() !== ''){
-            //Busca en localstorage el item movies, si no existe asigna el array vacio.
-            let users = JSON.parse(localStorage.getItem('users')) || [];
-            
-             //Si el input de ID es distinto de vacio, es porque se trata de una acción de UPDATE
-        if(inputId.value!==""){
-            //Busco dentro del arraya de movies el objeto a editar
-            const userFind = users.find(user => user.user == inputUser.value);
-
-          
-                if (userFind) {
-                    userFind.name= inputName.value;
-                    userFind.surname=inputSurname.value;
-                    userFind.email=inputEmail.value;
-                    userFind.phone= inputPhone.value;
-                    userFind.user= inputUser.value;
-                    userFind.profile_pic=inputprofile_pic.value; 
-                  
-                }
-            }else{
-                let newUser = new User(
-                    
-                    inputName.value,
-                    inputSurname.value,
-                    inputEmail.value,
-                    inputPhone.value,
-                    inputUser.value,
-                    inputPasword.value,
-                    inputprofile_pic.value,
-                    
-                );
-                users.push(newUser);
-            }
-    
-            //Se actualiza el array de peliculas en el localstorage
-            localStorage.setItem('users',JSON.stringify(users));
-            showUsers();
-            //Se limpian los inputs del formulario
-            form.reset();
-            Swal.fire({
-                title: 'Exito!',
-                text: 'Operacion exitosa.',
-                icon: 'success',
-                confirmButtonText: 'Cerrar'
-            })
-        }else{
-            Swal.fire({
-                title: 'Error!',
-                text: 'Por favor completa el campo Titulo.',
-                icon: 'error',
-                confirmButtonText: 'Cerrar'
+function showUsers() {
+    fetch('/usuarios')
+        .then(response => response.json())
+        .then(users => {
+            const tbodyUsers = document.querySelector('#list-table-user tbody');
+            tbodyUsers.innerHTML = ''; // Limpiar el contenido previo de la tabla
+            users.forEach(user => {
+                const tr = `
+                    <tr>
+                        <td>${user.user_name}</td>
+                        <td>${user.user_last_name}</td>
+                        <td>${user.email}</td>
+                        <td>${user.phone}</td>
+                        <td><img src="${user.image}" alt="Imagen de perfil" width="30%"/></td>
+                        <td>
+                            <button class="button" onclick='updateUser("${user.user_usuario}")'><i class="fa fa-pencil"></i></button>
+                            <button class="button" onclick='deleteUser("${user.user_usuario}")'><i class="fa fa-trash"></i></button>
+                        </td>
+                    </tr>
+                `;
+                tbodyUsers.insertAdjacentHTML('beforeend', tr);
             });
-        }
-    
+        })
+        .catch(error => console.error('Error:', error));
+}
+/* function showUsers() {
+    fetch('/usuarios')
+        .then(response => response.json())
+        .then(users => {
+            const tbodyUsers = document.querySelector('#list-table-users tbody');
+            tbodyUsers.innerHTML = '';
+            users.forEach(user => {
+                const tr = `
+                    <tr>
+                        <td>${user.user_name}</td>
+                        <td>${user.user_last_name}</td>
+                        <td>${user.email}</td>
+                        <td>${user.phone}</td>
+                        <td><img src="${user.image}" alt="Imagen de perfil" width="30%"></td>
+                        <td>
+                            <button class="button" onclick='updateUser("${user.user_usuario}")'><i class="fa fa-pencil"></i></button>
+                            <button class="button" onclick='deleteUser("${user.user_usuario}")'><i class="fa fa-trash"></i></button>
+                        </td>
+                    </tr>
+                `;
+                tbodyUsers.insertAdjacentHTML('beforeend', tr);
+            });
+        })
+        .catch(error => console.error('Error:', error));
+} */
+
+function saveUser() {
+    const form = document.querySelector('#form');
+    const inputName = document.querySelector('#name');
+    const inputSurname = document.querySelector('#surname');
+    const inputEmail = document.querySelector('#email');
+    const inputPhone = document.querySelector('#phone');
+    const inputUser = document.querySelector('#user');
+    const inputPassword = document.querySelector('#password');
+    const inputProfilePic = document.querySelector('#profile_pic');
+
+    if (inputName.value.trim() !== '') {
+        let newUser = new User(
+            inputName.value,
+            inputSurname.value,
+            inputEmail.value,
+            inputPhone.value,
+            inputUser.value,
+            inputPassword.value,
+            inputProfilePic.value
+        );
+
+        fetch(`/usuario?user_usuario=${inputUser.value}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(existingUser => {
+            console.log(existingUser)
+            if (existingUser.user_usuario===inputUser.value) {
+                // Usuario existe, hacer PUT para actualizar
+                fetch(`/update/${inputUser.value}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(newUser)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                    showUsers();
+                    form.reset();
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            } else {
+                // Usuario no existe, hacer POST para crear nuevo usuario
+                fetch('/registro', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(newUser)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                    showUsers();
+                    form.reset();
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    } else {
+        console.error('Error: Por favor completa el campo Nombre.');
     }
+}
+
+function updateUser(userUsuario) {
+    const user = prompt('Ingrese los nuevos datos del usuario (nombre, apellido, email, teléfono, imagen) separados por comas:');
+    if (!user) {
+        return;  // Cancelled
+    }
+
+    const [user_name, user_last_name, email, phone, image] = user.split(',');
+
+    fetch(`/update/${userUsuario}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ user_name, user_last_name, email, phone, image })
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert(data.message);
+        showUsers();
+    })
+    .catch(error => console.error('Error:', error));
+}
+function deleteUser(userUsuario) {
+    fetch(`/delete/${userUsuario}`, {
+        method: 'DELETE'
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert(data.message);
+        showUsers();
+    })
+    .catch(error => console.error('Error:', error));
+}

@@ -15,18 +15,13 @@ class User:
     def save(self):
         db = get_db()
         cursor = db.cursor()
-        if self.user:
-            cursor.execute("""
-                UPDATE userWebfolio SET user_name = %s, user_last_name = %s, email = %s, phone = %s, user_usuario = %s, user_password = %s, image = %s
-                WHERE user = %s
-            """, (self.user_name, self.user_last_name, self.email, self.phone, self.user_usuario, self.id_movie, self.user_password,  self.image))
-        else:
-            cursor.execute("""
-                INSERT INTO userWebfolio (user_name, user_last_name, email, phone, user_usuario, user_password, image) VALUES (%s, %s, %s, %s)
-            """, (self.user_name, self.user_last_name, self.email, self.phone, self.user_usuario, self.user_password,  self.image))
-            self.id_movie = cursor.lastrowid
+        sql = "INSERT INTO userWebfolio (user_name, user_last_name , email , phone , user_usuario , user_password , image ) VALUE (%s,%s,%s,%s,%s,%s,%s)"
+        val = (self.user_name, self.user_last_name, self.email,
+               self.phone, self.user_usuario, self.user_password, self.image)
+        cursor.execute(sql, val)
+
         db.commit()
-        cursor.close()
+    """  cursor.close() """
 
     @staticmethod
     def get_all():
@@ -34,21 +29,31 @@ class User:
         cursor = db.cursor()
         cursor.execute("SELECT * FROM userWebfolio")
         rows = cursor.fetchall()
-        user = [User(user_usuario=row[0], user_name=row[1], user_last_name=row[2],
-                     email=row[3], phone=row[4], image=row[5]) for row in rows]
+        user = [User(user_name=row[1],  user_last_name=row[2],
+                     email=row[3], phone=row[4], user_usuario=row[5], image=row[7]) for row in rows]
         cursor.close()
         return user
+
+    def update(self):
+        db = get_db()
+        cursor = db.cursor()
+        sql = "UPDATE userWebfolio SET user_name =%s,user_last_name=%s,email =%s,phone =%s,image =%s WHERE user_usuario =%s"
+        val = (self.user_name, self.user_last_name, self.email,
+               self.phone, self.image, self.user_usuario)
+        cursor.execute(sql, val)
+        db.commit()
 
     @staticmethod
     def get_by_id(user_usuario):
         db = get_db()
         cursor = db.cursor()
         cursor.execute(
-            "SELECT * FROM userWebfolio WHERE user_usuario = %s", (user_usuario))
+            "SELECT * FROM userWebfolio WHERE user_usuario =%s", (user_usuario,))
         row = cursor.fetchone()
         cursor.close()
         if row:
-            return User(id_userWebfolio=row[0], user_name=row[1], user_last_name=row[2], email=row[3], phone=row[4], user_usuario=row[5], user_password=row[6], image=row[7])
+            return User(user_name=row[1],  user_last_name=row[2],
+                        email=row[3], phone=row[4], user_usuario=row[5], image=row[7])
 
         return None
 
@@ -56,7 +61,7 @@ class User:
         db = get_db()
         cursor = db.cursor()
         cursor.execute(
-            "DELETE FROM userWebfolio WHERE iser_usuario = %s", (self.user_usuario))
+            "DELETE FROM userWebfolio WHERE user_usuario = %s", (self.user_usuario,))
         db.commit()
         cursor.close()
 
