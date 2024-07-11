@@ -22,6 +22,7 @@ function showUsers() {
             users.forEach(user => {
                 const tr = `
                     <tr>
+                        <td>${user.user_usuario}</td>
                         <td>${user.user_name}</td>
                         <td>${user.user_last_name}</td>
                         <td>${user.email}</td>

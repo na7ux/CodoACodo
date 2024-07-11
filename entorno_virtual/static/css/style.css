@@ -943,4 +943,61 @@ footer {
     .menu a {
         font-size: 14px;
     }
+/* Contenedor principal */
+.container_registrar {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.table thead {
+    background-color: #009879;
+    color: #fff;
+}
+
+.table th,
+.table td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.table th {
+    font-weight: 700;
+}
+
+.table tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+.button-update {
+    background-color: #4CAF50; /* Verde /
+}
+
+.button-delete {
+    background-color: #f44336; / Rojo */
+}
+table img {
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+}
 }
